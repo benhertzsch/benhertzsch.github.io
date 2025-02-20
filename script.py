@@ -46,7 +46,7 @@ def main():
         ['contents/publications.html', './publications.html', "./base.html", './publications.html'],
         ['contents/notes.html', './notes.html', "./base.html", './notes.html'],
         
-        ['notes/catastrophe_theory.html', './catastrophe_theory.html', "./base_minimal.html", './notes.html']
+        ['notes/catastrophe_theory/catastrophe_theory.html', './catastrophe_theory.html', "./base_minimal.html", './notes.html']
     ]
 
     for (in_file, out_file, base_file, navbar_string) in paths:
