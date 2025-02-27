@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+<head>
+    <title>Benjamin Hertzsch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link rel="icon" href="figures/icon.png"></link>
+            
+            <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+            <style type='text/css'>
+                ul.nav li.dropdown:hover ul.dropdown-menu {
+                    display: block;
+                }
+            </style>
+
+            <script type="text/javascript">
+                MathJax = {
+                  tex: {
+                    macros: {
+                      bm: ["{\\boldsymbol #1}",1]
+                    }
+                  }
+                };
+            </script>
+            
+            <style>
+                :root {
+                    --color1: rgb(229, 240, 251);
+                    --color2: rgb(123, 148, 185);
+                }
+                
+                navbar {
+                    background-color: var(--color1); /* Apply the background color */
+                }
+
+                navbar .nav > .active > a {
+                    background-color: var(--color2);
+                }
+
+                .navbar, .navbar a, .navbar-nav li a {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                }
+
+                * {
+                    font-family: 'Computer Modern';
+                    font-size: 16px;
+                    text-align: justify;
+                }
+
+                h1 {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 15px;
+                }
+                
+                h2 {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                    margin-top: 25px;
+                    margin-bottom: 12px;
+                }
+
+                h3 {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                    margin-top: 25px;
+                    margin-bottom: 8px;
+                    font-size: 20px;
+                    font-style: italic;
+                }
+
+                .author-class {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                    text-align: center;
+                    font-size: 20px;
+                    margin-bottom: 30px;
+                }
+
+                .paragraph-class {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                    font-weight: bold;
+                    font-size: 16px;
+                    margin-right: 1em;
+                    display: inline;
+                }
+
+                .math.display {
+                    display: block;
+                    text-align: center;
+                    margin: 1em auto;
+                }
+
+                body {
+                    counter-reset: figCounter;
+                }
+
+                .centered-box {
+                    display: inline-block;
+                    text-align: center !important;
+                    vertical-align: middle;
+                    padding-top: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border: 2px solid black;
+                    background-color: white;
+                    margin-bottom: 10px;
+                }
+                .centered-container {
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    width: 100%;
+                    margin: 20px 0; /* Adds spacing around the box */
+                }
+                
+                figure {
+                    counter-increment: figCounter;
+                }
+
+                figcaption {
+                    font-size: 14px;
+                    font-style: italic;
+                    padding: 2px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+
+                figcaption::before {
+                    content: 'Fig. ' counter(figCounter) ': ';
+                }
+
+                table {
+                    width: auto;
+                    margin: 20px auto;
+                    border-collapse: collapse;
+                    text-align: center;
+                }
+                
+                th, td {
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border: 0.5px solid rgb(162, 162, 162);
+                }
+                
+                th {
+                    background-color: #d3d3d3;
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+                }
+                
+                td {
+                    text-align: left;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                }
+
+            </style>
+        </meta>
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+     <!-- <nav class="navbar navbar-default" style="background-color: var(--color1); margin-bottom: 0;"> -->
+    <nav class="navbar navbar-default" style="margin-bottom: 0;"> 
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html">About</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li><a href="./publications.html">Publications</a></li>
+                    <li class="active"><a href="./notes.html">Notes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 20px; margin-top: 0px;">
+<h1
+id="catastrophe-theory-the-seven-elementary-catastrophes">Catastrophe
+Theory –<br> The Seven Elementary Catastrophes</h1>
+<p class="author-class">
+Benjamin Hertzsch
+</p>
+<p><strong><em>Disclaimer:</em></strong> These notes were typed up as a
+first version for a PhD seminar I gave in Edinburgh on the 27/02/2025.
+These notes likely contain numerous typos, are wordy or inaccurate in
+places, and several LaTeX equations are not properly displayed. I will
+update the notes and fix the template soon.</p>
+<p>In these notes, I will derive Thom’s <em>seven elementary
+catastrophes</em> (<a
+href="https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&amp;redir_esc=y">Thom
+(1972)</a>), the main elements of catastrophe theory in the
+four-dimensional universe. Key works on catastrophe theory are <a
+href="https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&amp;redir_esc=y">Thom
+(1972)</a>, <a
+href="https://link.springer.com/article/10.1007/BF01077644">Arnol’d
+(1972)</a> (amongst many of Arnol’d’s mathematical works on catastrophe
+theory) as well as various articles by <a
+href="https://books.google.co.uk/books/about/Catastrophe_Theory.html?id=CxuYf2PP2hsC&amp;redir_esc=y">Zeeman
+(1972-1977)</a>. An in-depth and mathematically rigorous survey of
+catastrophe theory can be found in <a
+href="https://link.springer.com/book/10.1007/978-0-8176-8340-5">Arnold
+et al. (1985)</a>. For applications of catastrophe theory, see also <a
+href="https://link.springer.com/book/10.1007/978-3-642-58124-3">Arnold
+(1984)</a>; for beautiful illustrations of the various caustics in
+optics, we refer to <a
+href="https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf">Berry
+(1980)</a>. In the following, I will closely follow <a
+href="https://www.cambridge.org/core/books/an-introduction-to-catastrophe-theory/D5ECA839997CD9C2A247C413E69CD2B8">Saunders
+(1980)</a> to derive catastrophe theory in the language familiar to
+physicists.</p>
+<h2 id="fundamentals-and-terminology">Fundamentals and terminology</h2>
+<p>
+<p><span class="paragraph-class">Critical points and Morse’s
+lemma</span> Consider a multivariate function <span
+class="math inline"><em>f</em>(<strong>x</strong>)</span> of some state
+variables <span class="math inline"><strong>x</strong></span>. The
+function has a critical point at <span
+class="math inline"><strong>x</strong><sub>0</sub></span> if</p>
+<p><span
+class="math display">∇<strong>x</strong>|<sub><strong>x</strong><sub>0</sub></sub> = 0</span></p>
+<p>The critical point is <em>non-degenerate</em> if the Hessian <span
+class="math inline">ℋ<em>f</em>(<strong>x</strong>) = ∂<sub><em>i</em></sub>∂<sub><em>j</em></sub><em>f</em>(<strong>x</strong>)</span>
+at the critical point is invertible, i.e. if</p>
+<p><span
+class="math display">det (ℋ<em>f</em>(<strong>x</strong>))|<sub><strong>x</strong><sub>0</sub></sub> ≠ 0</span></p>
+<p>If <span
+class="math inline">det (ℋ<em>f</em>(<strong>x</strong>))|<sub><strong>x</strong><sub>0</sub></sub> = 0</span>,
+the critical point is <em>degenerate</em>. In the one-dimensional case,
+<span class="math inline"><em>f</em>(<em>x</em>)</span>, it is customary
+to call the a critical point <em><span
+class="math inline"><em>n</em></span>-fold degnerate</em> for <span
+class="math inline"><em>n</em></span> derivatives higher than
+first-order vanishing at <span
+class="math inline"><em>x</em><sub>0</sub></span>.</p>
+<p><strong>Catastrophe theory is the general classification of
+degenerate points and thus extends Morse’s classication of
+non-degenerate critical points</strong>. In the following, critical
+points will always taken to be at the origin <span
+class="math inline"><strong>x</strong> = <strong>0</strong></span>.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-min_max_Morse.jpeg" style="display: block; margin: 0 auto; height: 250px; padding: 5px;">
+<figcaption>
+The functions <span class="math inline">−<em>x</em><sup>2</sup></span>
+and <span class="math inline"><em>x</em><sup>2</sup></span> have a
+maximum / minimum respectively as a non-degenerate critical point at the
+origin.
+</figcaption>
+</figure>
+<p>For a function <span
+class="math inline"><em>f</em>(<em>x</em>)</span> of a single variable
+and a non-degenerate critical point at the origin, <em>Morse’s
+classification</em> states that the critical point is a minimum if <span
+class="math inline"><em>f</em>″(0) &gt; 0</span> and a maximum if <span
+class="math inline"><em>f</em>″(0) &lt; 0</span>. This classification
+extends to the multivariate case as follows: Consider a multivariate
+function <span class="math inline"><em>f</em>(<strong>x</strong>)</span>
+with <span class="math inline"><em>n</em></span> state variables <span
+class="math inline"><strong>x</strong></span> and a non-degenerate
+critical point at the origin. <em>Morse’s lemma</em> states that there
+exists a diffeomorphism <span class="math inline"><em>ψ</em></span>
+which preservers the origin, <span
+class="math inline"><em>ψ</em>(<strong>0</strong>) = <strong>0</strong></span>,
+under which the function near the non-degenerate critical point may be
+written as quadratic form</p>
+<p><span
+class="math display"><em>f</em>(<em>ψ</em>(<strong>x</strong>)) = −<em>x</em><sub>1</sub><sup>2</sup> − <em>x</em><sub>2</sub><sup>2</sup> − … − <em>x</em><sub><em>p</em></sub><sup>2</sup> + 1 + <em>x</em><sub><em>p</em> + 1</sub><sup>2</sup> + … + <em>x</em><sub><em>n</em></sub><sup>2</sup> ,</span></p>
+<p>One calls <span class="math inline"><em>p</em></span> the (Morse)
+index of the singularity at <span
+class="math inline"><strong>x</strong> = 0</span>, which counts the
+directions in which the function assumes a maximum. Written in this
+quadratic form, it is obvious that the Hessian <span
+class="math inline">ℋ<em>f</em></span> is invertible at a non-degenerate
+critical point.</p>
+<p>
+<p><span class="paragraph-class">Corank</span> Degenerate critical
+points were defined above by the condition <span
+class="math inline">det ℋ<em>f</em>(<strong>x</strong>) = 0</span>.
+Consider now a frame in which the Hessian is diagonal, so that diagonal
+second derivatives coincide with the eigenvalues, of the product of
+which is equal to the determinant. It is now a priori unclear how many
+of these eigenvalues vanish, corresponding to the orthogonal directions
+in which the Hessian is degenerate. The <em>splitting lemma</em> now
+states that to classify all the non-degenerate critical points, one only
+has to consider the <em>essential</em> variables, for which the
+vanishing of the second derivate cannot be removed by a suitable
+coordinate transformation. Their number is equal to the number of
+vanishing eigenvalues of <span
+class="math inline">ℋ<em>f</em>(<strong>x</strong>)</span>. One refers
+to the number of essential variables as <em>corank</em> of the
+singularity.</p>
+<p>In the following, I will assume the number of state variables for a
+function always to be equal to the number of essential variables, and
+hence use the terms interchangeably.</p>
+<p>
+<p><span class="paragraph-class">Structural stability</span>
+<em>Structural stability</em> refers to the property of a function that
+the qualitative nature of the function does not change under small
+perturbations. Consider for example the polynomials in a single variable
+<span class="math inline"><em>x</em><sup><em>n</em></sup></span> up to
+some order <span class="math inline"><em>n</em></span>. Structural
+stablility requires that the addition of any polynomial <span
+class="math inline"><em>α</em><em>x</em><sup><em>m</em></sup></span>
+with small <span class="math inline"><em>α</em></span> and <span
+class="math inline"><em>m</em></span> a positive integer and does not
+alter the critical nature of the function near the critical point
+(i.e. the origin). For <span
+class="math inline"><em>m</em> &gt; <em>n</em></span>, this is trivially
+true; for <span class="math inline"><em>m</em> &lt; <em>n</em></span>,
+the situation may change.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-cubic_unfolding.jpeg" style="display: block; margin: 0 auto; height: 250px; padding: 5px;">
+<figcaption>
+The function <span
+class="math inline"><em>x</em><sup>3</sup> − <em>α</em><em>x</em></span>
+with <span class="math inline"><em>α</em> = {−0.15, 0.0, 0.15}</span>.
+Varying <span class="math inline"><em>α</em></span> from negative to
+positive values unfolds the degenerate critical point at the origin to a
+pair of non-degenerate critical points (maximum and minimum).
+</figcaption>
+</figure>
+<p>Consider for instance the function <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>3</sup></span>
+which has a degenerate critical point at the origin. This is function
+not structurally stable, as the addition of the term <span
+class="math inline">−<em>α</em><em>x</em></span> with <span
+class="math inline"><em>α</em> &gt; 0</span> would change the function’s
+qualitative nature by unfolding the critical point at the origin into a
+maximum and a minimum at <span class="math inline">$x = \{ \pm
+\sqrt{\frac{\alpha}{3}}\}$</span>. However, the family of functions
+<span
+class="math inline"><em>f</em><sub><strong>u</strong></sub>(<strong>x</strong>) = <em>x</em><sup>3</sup> + <em>u</em><sub>2</sub><em>x</em><sup>2</sup> + <em>u</em><sub>1</sub><em>x</em><sup>1</sup> + <em>u</em><sub>0</sub></span>
+is structurally stable, as the addition of any term <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span> up to <span
+class="math inline"><em>n</em> = 3</span> does not change the critical
+behaviour of the family of functions. The same argument applies to
+multivariate functions with several state variables <span
+class="math inline"><strong>x</strong></span>, where the function family
+<span
+class="math inline"><em>f</em><sub><strong>u</strong></sub>(<strong>x</strong>)</span>
+addition of any small perturbation in <span
+class="math inline"><em>α</em><em>h</em>(<strong>x</strong>)</span> with
+must be “recovered” in the function family.</p>
+<p>Throughout these notes, the subcript <span
+class="math inline"><strong>u</strong></span> will be generally omitted
+for simplicity, and “families of functions” will be simply referred to
+as “functions”. It should be clear from the context that parameters may
+be involved.</p>
+<p>At this point, note that we have been discussing polynomials only.
+This is actually general, as we are interested in the neighborhood of a
+critical point, where a function may be expanded in a Taylor series. The
+results we derived are therefore to be understood as classifying the
+<span class="math inline"><em>k</em></span>-<em>jet</em> <span
+class="math inline"><em>j</em><sup><em>k</em></sup>(<em>x</em>)</span>
+(Taylor series truncated at order <span
+class="math inline"><em>k</em></span>) of a generic analytic function
+that can be locally expanded as a polynomial.</p>
+<p>
+<p><span class="paragraph-class">Unfoldings</span> The function families
+discussed above are also called <em>unfoldings</em> of the
+singularities. Consider again the bare singularity <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span>, for which
+the unfolding</p>
+<p><span
+class="math display"><em>f</em><sub><strong>u</strong></sub>(<em>x</em>) = <em>x</em><sup><em>n</em></sup> + <em>u</em><sub><em>n</em> − 1</sub><em>x</em><sup><em>n</em> − 1</sup> + … + <em>u</em><sub>1</sub><em>x</em> + <em>u</em><sub>0</sub></span></p>
+<p>provides a structurally stable family of functions. Similarly, for a
+singularity in several state variables <span
+class="math inline"><strong>x</strong></span>, a possible unfolding is
+obtained by adding all monomials of lower order. For instance, for <span
+class="math inline"><em>x</em><sup>3</sup><em>y</em><sup>2</sup></span>,
+all terms <span
+class="math inline"><em>x</em><sup><em>k</em></sup><em>y</em><sup><em>l</em></sup></span>
+with <span class="math inline"><em>k</em> &lt; 3 ∈ ℕ</span>, <span
+class="math inline"><em>l</em> &lt; 2 ∈ ℕ</span> could appear in this
+function family.</p>
+<p>An unfolding is said to be <em>versal</em> if it is structurally
+stable. Clearly, this is the case for the unfoldings proposed above.
+However, not all terms in these function families are actually necessary
+to ensure structural stability. For instance, for a singularity <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span>, it is
+readily seen that the terms <span
+class="math inline"><em>u</em><sub><em>n</em> − 1</sub><em>x</em><sup><em>n</em> − 1</sup></span>
+and <span class="math inline"><em>u</em><sub>0</sub></span> do not
+actually change qualitative behavior of the function, as they may simply
+be absorbed in a shift of the origin and do not change the critical
+point. For more than one state variable, it is not so obvious which
+terms would be relevant, but the same argument applies.</p>
+<p>An unfolding is said to be <em>universal</em> if it is structurally
+stable and has the least number of parameters. The term
+<em>unfolding</em> in the literature usually refers to universal
+unfolding of a caustic. In the univariate case, the singularity a <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span> is <span
+class="math inline"><em>n</em> − 2</span>-fold degenerate and takes
+<span class="math inline"><em>n</em> − 2</span> unfolding
+parameters:</p>
+<p><span
+class="math display"><em>f</em><sub><strong>u</strong></sub>(<em>x</em>) = <em>x</em><sup><em>n</em></sup> + <em>u</em><sub><em>n</em> − 2</sub><em>x</em><sup><em>n</em> − 2</sup> + … + <em>u</em><sub>1</sub><em>x</em></span></p>
+<p>For singularities with two state variables, a few universal
+unfoldings will be derived below. Throughout these notes, the essential
+(state) variables will always be denoted as <span
+class="math inline"><strong>x</strong></span>, and the universal
+unfolding parameteres as <span
+class="math inline"><strong>u</strong></span>.</p>
+<p>Finally, consider again the singularity <span
+class="math inline"><em>x</em><sup>3</sup></span>, for which we can now
+write down the universal unfolding as</p>
+<p><span
+class="math display"><em>f</em>(<em>x</em>) = <em>x</em><sup>3</sup> + <em>u</em><em>x</em></span></p>
+<p>It is now clear that the term “unfolding” is chosen because the
+linear term reveals that the degenerate critical point actually is two
+coincident non-degenerate critical points, which are unfolded by varying
+<span class="math inline"><em>u</em></span>. Generally, universal
+unfoldings unfold <span class="math inline"><em>n</em></span>-fold
+degenerate critical points into <span
+class="math inline"><em>n</em> + 1</span> non-degenerate critical
+points.</p>
+<p>
+<p><span class="paragraph-class">Codimension</span> The unfolding
+parameters in physical applications of catastrophe theory represent a
+target space, which is typically the (up to) <span
+class="math inline">4</span> dimensions of our space-time. This means
+that stable geometric objects (rather than unstable transient events) in
+this target space can be defined by up to <span
+class="math inline">4</span> constraint equations. The number of
+constraint equations is typically called the <span
+class="math inline"><em>c</em><em>o</em><em>d</em><em>i</em><em>m</em><em>e</em><em>n</em><em>s</em><em>i</em><em>o</em><em>n</em></span>
+of an object.</p>
+<p>For the following list of seven elementary catastrophes, it suffices
+to define the codimension of a singularity as the number of parameters
+in the universal unfolding. This is because, as we have already seen for
+the univariate case <span
+class="math inline"><em>f</em>(<em>x</em>)</span>, the number of
+unfolding parameters is equal to a singularity’s degree of degeneracy.
+But saying that a critical point is <span
+class="math inline"><em>n</em></span>-fold degenerate is the same as
+saying that there <span class="math inline"><em>n</em></span> constraint
+equations, which constrain <span class="math inline"><em>n</em></span>
+higher derivatives to vanish.</p>
+<p>For the case of more than one essential variable, the same argument
+holds, and the codimension is again equal to the number of unfolding
+parameters. We will see below that finding the universal unfoldings is
+more tricky, but we can already make another important observation:
+Consider a singularity of corank <span
+class="math inline"><em>l</em></span>, with <span
+class="math inline"><em>l</em></span> state variables (all of which are
+essential). The Hessian is symmetric, thus the vanishing of <span
+class="math inline">det ℋ<em>f</em></span> requires that all the <span
+class="math inline"><em>l</em>(<em>l</em> + 1)/2</span> independent
+entries of the Hessian are zero. This means that there are <span
+class="math inline"><em>l</em>(<em>l</em> + 1)/2</span> constraint
+equations, and the singularity is therefore of codimension at least
+<span class="math inline"><em>l</em>(<em>l</em> + 1)/2</span>. In words,
+a corank-<span class="math inline"><em>l</em></span> singularity is
+stabilised by at least <span
+class="math inline"><em>l</em>(<em>l</em> + 1)</span> unfolding
+parameters. Corank-3 singularities therefore take at least 6 unfolding
+parameters, and are not stable in the 4-dimensional universe;l similary
+for higher coranks.</p>
+<p>The corollary of the above is the following:</p>
+<div class="centered-box">
+<p><strong>In the <span class="math inline">4</span>-dimensional
+universe, the full classification of stable degenerate critical points
+is given by the catastrophes of corank up to 2 and codimension up to
+4.</strong></p>
+</div>
+<p>Is is clear evident that the relevant corank-1 singularities are
+<span class="math inline"><em>x</em><sup>3</sup></span> through <span
+class="math inline"><em>x</em><sup>6</sup></span>. It will also be shown
+the that there are three relevant corank-2 singularities.</p>
+<div class="centered-box">
+<p><strong>The seven elementary catastrophes are given by:</strong></p>
+<p><strong><span
+class="math inline"><em>x</em><sup>3</sup>   <em>x</em><sup>4</sup>   <em>x</em><sup>5</sup>   <em>x</em><sup>6</sup>   <em>x</em><sup>3</sup> + <em>y</em><sup>3</sup>   <em>x</em><sup>3</sup> − <em>x</em><em>y</em><sup>2</sup>   <em>y</em><sup>4</sup> + <em>x</em><sup>2</sup><em>y</em></span></strong></p>
+<p>These are called the <strong><em>fold</em></strong>,
+<strong><em>cusp</em></strong>, <strong><em>swallowtail</em></strong>,
+<strong><em>butterfly</em></strong> and the
+<strong><em>hyperbolic</em></strong>, <strong><em>elliptic</em></strong>
+and <strong><em>parabolic umbilic</em></strong>.</p>
+</div>
+<p>For completeness, note that our simplistic definition of codimension
+ceases to be appropriate for catastrophes of higher-order catastrophes,
+where moduli spaces occur and the geometric and algebraic dimensions of
+the singularities become different.</p>
+<p>
+<p><span class="paragraph-class">Critical set, singular set and
+bifurcation set</span> The normal forms of the caustics live in the
+space <span
+class="math inline">(<strong>x</strong>, <strong>u</strong>)</span> of
+essential variables <span class="math inline"><strong>x</strong></span>
+and unfolding parameters <span
+class="math inline"><strong>u</strong></span>. In this space, there are
+a few objects of interest, which reveal the characteristic geometries of
+the various caustics in physical applications. The <em>equilibrium</em>
+or <em>critical set</em> <span class="math inline">ℳ</span> is defined
+as the set of all points for which the function’s gradient vanishes,</p>
+<p><span
+class="math display">ℳ = {<strong>x</strong>, <strong>u</strong> : ∇<em>f</em><sub><strong>u</strong></sub>(<strong>x</strong>) = 0} </span></p>
+<p>where the subscript <span
+class="math inline"><strong>u</strong></span> is again omitted. The
+<em>singular set</em> <span class="math inline">𝒮</span> is defined as
+the set of all points within the critical set for which the Hessian is
+non-invertable,</p>
+<p><span
+class="math display">𝒮 = {<strong>x</strong>, <strong>u</strong> ∈ ℳ : det ℋ<em>f</em><sub><strong>u</strong></sub>(<strong>x</strong>) = 0}</span></p>
+<p>Both <span class="math inline">ℳ</span> and <span
+class="math inline">𝒮</span> live in space of essential variables and
+unfolding parameters <span
+class="math inline">(<strong>x</strong>, <strong>u</strong>)</span>. The
+<em>bifurcation set</em> <span class="math inline">ℬ</span> is defined
+as the projection of the singular set into the space of unfolding
+parameters</p>
+<p><span class="math display">ℬ = {<strong>u</strong> ∈ 𝒮}</span></p>
+<p><span class="math inline">ℬ</span> i readily obtained by eliminating
+the state variables <span class="math inline"><strong>x</strong></span>
+from <span class="math inline">𝒮</span> and <span
+class="math inline">ℳ</span>.</p>
+<p>
+<p><span class="paragraph-class">Physical manifestation of
+catastrophes</span> Before deriving the classification of all caustics,
+it is instructive to attach a physical meaning to the objects defined
+above. The various catastrophes generally arise in situations that map
+from a space of initial configurations, <em>Lagrangian space</em>, to a
+space of final configurations, <em>Eulerian space</em>. The essential
+variables <span class="math inline"><strong>x</strong></span> here take
+the role of Lagrangian space coordinates, while the unfolding variables
+<span class="math inline"><strong>u</strong></span> correspond to the
+Eulerian space coordinates. The latter usually chart the (up to) <span
+class="math inline">4</span>-dimensional space-time a physical
+experiment lives in.</p>
+<p>The singularity germs describe the Lagrangian space configuration,
+e.g. a lensing or gravitational potential <span
+class="math inline"><em>Φ</em>(<strong>x</strong>)</span>. The critical
+set <span class="math inline">ℳ</span> then corresponds the set of
+solutions to a governing equation (mapping equation, equation of motion,
+…) from this initial configuration, i.e. the set of all possible paths
+from <span class="math inline"><strong>x</strong></span> to <span
+class="math inline"><strong>u</strong></span>. This may be, for
+instance, the ensemble of light rays bent by a lensing potential, matter
+moving through a gravitational potential, or generic solutions to an
+initial value problem. The singular set <span
+class="math inline">𝒮</span> then corresponds to the boundaries of those
+regions in the Eulerian space <span
+class="math inline"><strong>u</strong></span> where several solutions
+coincide; that is, where several Lagrangian positions <span
+class="math inline"><strong>x</strong></span> are mapped to the same
+final configuration <span class="math inline"><strong>u</strong></span>.
+The Lagrangian space is usually inaccessible, so that an experiment does
+not observe <span class="math inline">ℳ</span> and <span
+class="math inline">𝒮</span>, but only the bifurcation set <span
+class="math inline">ℬ</span>, which is the projection of <span
+class="math inline">𝒮</span> into the observed Eulerian space <span
+class="math inline"><strong>u</strong></span>.</p>
+<p>These concepts are is nicely illustrated with snapshot of a 2D mesh
+simulation for cosmological structure formation; for more details, see
+<a href="./research.html">my research page</a>. An observer would
+observe the Eulerian space in the right panel, i.e. the density of
+particles at the final positions at some time <span
+class="math inline"><em>t</em></span>. The observer does not a priori
+know whence these particles came from, as the Lagrangian space is not
+observable. The bifurcation set in Eulerian space is characterised by
+(infinite) density spikes. Our knowledge of the simulation allows us to
+draw the evolving mesh from Lagrangian space, and correctly identify the
+bifurcation set as the set of Eulerian points bounding the
+<em>multistream</em> regions where several incoming paths overlap.</p>
+<h2 id="the-seven-elementary-catastrophes">The seven elementary
+catastrophes</h2>
+<p>Having discussed all the needed fundamental notions, I will discuss
+the seven elementary catastrophes and their characteristic
+geometries.</p>
+<h3 id="corank-1-catastrophes-the-cuspoids">Corank-1 catastrophes: the
+cuspoids</h3>
+<p>We will first discuss the the corank-1 catastrophes, which are known
+as the <em>cuspoids</em>, after the archetypical cusp catastrophe
+occuring in this family of singularities.</p>
+<p>We have already seen above that the universal unfoldings are given in
+the form <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup><em>n</em></sup> + <em>u</em><sub><em>n</em> − 2</sub><em>x</em><sup><em>n</em> − 2</sup> + … + <em>u</em><sub>1</sub><em>x</em></span>.
+It is thus straightforward to derive the equilibtrium, singular and
+bifurcation sets and discus their geometries.</p>
+<h4 id="a2-fold-catastrophe">A<sub>2</sub> fold catastrophe</h4>
+<p>Some properties of the fold catastrophe <span
+class="math inline"><em>x</em><sup>3</sup></span> were already discussed
+above. The universal unfolding is</p>
+<p><span class="math display">$$
+\boxed{f_{A_2}(x) = x^3 + u x}
+$$</span></p>
+<p>with a single unfolding parameter <span
+class="math inline"><em>u</em></span>. The equilibrium and singular set
+are readily obtained:</p>
+<p><span
+class="math display">ℳ<sub><em>A</em><sub>2</sub></sub> = {(<em>x</em>, <em>u</em>) : 3<em>x</em><sup>2</sup> + <em>u</em> = 0}</span></p>
+<p><span
+class="math display">𝒮<sub><em>A</em><sub>2</sub></sub> = {(<em>x</em>, <em>u</em>) : 6<em>x</em> = 0}</span></p>
+<p>Elimination of <span class="math inline"><em>x</em></span> yields the
+bifurcation set</p>
+<p><span
+class="math display">ℬ<sub><em>A</em><sub>2</sub></sub> = {<em>u</em> : <em>u</em> = 0}</span></p>
+<p>The bifurcation set in this case is just a single point in the
+unfolding space. This is exactly what we discussed above regarding the
+structural stability of the cubic polynomial: As the unfolding parameter
+<span class="math inline"><em>u</em></span> is varied through 0, the
+qualitative nature changes as the degenerate critical point is unfolded
+into a pair of non-degenerate critical points (maximum and minimum).</p>
+<h4 id="a3-cusp-catastrophe">A<sub>3</sub> cusp catastrophe</h4>
+<p>Next in the list of co-dimension-<span class="math inline">1</span>
+caustics is the <em>cusp</em> catastrophe <span
+class="math inline"><em>x</em><sup>4</sup></span>. The cusp has
+co-dimension <span class="math inline">2</span>, and the universal
+unfolding is</p>
+<p><span class="math display">$$
+\boxed{f_{A_3}(x) = x^4 + u x^2 + v x}
+$$</span></p>
+<p>with two unfolding parameters <span
+class="math inline">(<em>u</em>, <em>v</em>)</span>. The equilibrium and
+singular set are given by</p>
+<p><span
+class="math display">ℳ<sub><em>A</em><sub>3</sub></sub> = {(<em>x</em>, <em>u</em>, <em>v</em>) : 4<em>x</em><sup>3</sup> + 2<em>u</em><em>x</em> + <em>v</em> = 0}</span></p>
+<p><span
+class="math display">𝒮<sub><em>A</em><sub>3</sub></sub> = {(<em>x</em>, <em>u</em>) : 12<em>x</em><sup>2</sup> + 2<em>u</em> = 0}</span></p>
+<p>Eliminating <span class="math inline"><em>x</em></span> yields the
+bifurcation set in the unfolding parameters</p>
+<p><span
+class="math display">ℬ<sub><em>A</em><sub>3</sub></sub> = {(<em>u</em>, <em>v</em>) : 8<em>u</em><sup>3</sup> + 37<em>v</em><sup>2</sup> = 0}</span></p>
+<p>The equilibrium set (yellow) and singular set (red) are shown in the
+left panel of the figure below. The bifurcation set is the projection
+into the space of unfolding parameters <span
+class="math inline">(<em>u</em>, <em>v</em>)</span> shown on the
+right-hand side.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-A3_equilibrium_set.jpeg" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Equilibrium and singular set (left) and bifurcation set (right) of the
+<span class="math inline"><em>A</em><sub>3</sub></span> catastrophe,
+revealing the characteristic cusp geometry.
+</figure>
+<p>For clarity, the following figure also shows a rotating view of the
+equilbrium surface</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-A3_equilibrium_set.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Rotating view of the <span
+class="math inline"><em>A</em><sub>3</sub></span> equilibrium set.
+</figure>
+<p>The equilibrium and bifurcation set of the cusp catastrophe reveals a
+generic geometric property of all the caustics: The equilibrium surface
+is a smooth surface in the space <span
+class="math inline">(<strong>x</strong>, <strong>u</strong>)</span>, but
+the bifurcation set is not a smooth line in the unfolding space <span
+class="math inline">(<strong>u</strong>)</span>. More formally, the
+equilibrium set is always a manifold, whereas the bifurcation set is
+not. In the case of the cusp, <span class="math inline">ℬ</span> is
+diffeomorphic, but not homeomorphic, to <span
+class="math inline">ℝ<sup>1</sup></span>, meaning that <span
+class="math inline">ℬ</span> cannot be smoothly deformed to <span
+class="math inline">ℝ<sup>1</sup></span> without flattening the
+non-differentiable point at the origin.</p>
+<p>As was mentioned above, the equilibrium set typically represent the
+physical solutions to a boundary problem, with <span
+class="math inline"><strong>x</strong></span> being the unobservable
+Lagrangian space, and <span
+class="math inline"><strong>u</strong></span> being the observed
+Eulerian space. For the cusp, we can see that there are regions of 3
+overlapping solutions, which are bounded the by the cusp point and the
+fold lines emerging from it. These are known as <em>multi-image
+regions</em> in lensing applications, or <em>multistream regions</em> is
+cosmological structure formation and are nicely illustrated in the
+following physical applications.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/cusp_reflection.jpeg" alt="Description 1" style="height: 220px; margin-right: 25px">
+<img src="./notes/catastrophe_theory/figures/mirror_plot.jpeg" alt="Description 2" style="height: 220px; margin-left: 25px">
+<img src="./notes/catastrophe_theory/figures/anim-A3_mesh.gif" alt="Description 2" style="height: 220px; margin-left: 25px"></p>
+</div>
+<figcaption>
+Physical realisations of cusp catastrophes: left a reflection in a
+circular mirror (taken from https://i.sstatic.net/TMJnP.jpg), modelled
+in the middle panel with a circular mirror and a single reflection
+(dominant contribution to caustic) of the incident rays. The right panel
+shows a 2D cosmological mesh simulation (Zel’dovich approximation) for
+the formation of Zel’dovich pancake, bounded by two fold lines
+connecting two cusp points.
+</figcaption>
+</figure>
+<h4 id="a4-swallowtail-catastrophe">A<sub>4</sub> swallowtail
+catastrophe</h4>
+<p>The next corank-1 catastrophe is the swallowtail <span
+class="math inline"><em>x</em><sup>5</sup></span>, which has
+co-dimension 3 with the universal unfolding</p>
+<p><span class="math display">$$
+\boxed{f_{A_4}(x) = x^5 + u x^3 + v x + w}
+$$</span></p>
+<p>The equilibrium and singular set are given by</p>
+<p><span
+class="math display">ℳ<sub><em>A</em><sub>4</sub></sub> = {(<em>x</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 5<em>x</em><sup>4</sup> + 3<em>u</em><em>x</em><sup>2</sup> + 2<em>v</em><em>x</em> + <em>w</em> = 0}</span></p>
+<p><span
+class="math display">𝒮<sub><em>A</em><sub>4</sub></sub> = {(<em>x</em>, <em>u</em>, <em>v</em>) : 20<em>x</em><sup>3</sup> + 6<em>u</em><em>x</em> + 2<em>v</em> = 0}</span></p>
+<p>Eliminating <span class="math inline"><em>x</em></span> gives the
+two-dimensional bifurcation surface in the space of unfolding parameters
+<span
+class="math inline">(<em>u</em>, <em>v</em>, <em>w</em>)</span>:</p>
+<p><span
+class="math display">ℬ<sub><em>A</em><sub>4</sub></sub> = {(<em>u</em>, <em>v</em>, <em>w</em>) : −81<em>u</em><sup>4</sup><em>w</em> + 27<em>u</em><sup>3</sup><em>v</em><sup>2</sup> + 360<em>u</em><sup>2</sup><em>w</em><sup>2</sup> − 540<em>u</em><em>v</em><sup>2</sup><em>w</em> + 135<em>v</em><sup>4</sup> − 400<em>w</em><sup>3</sup> = 0}</span></p>
+<p>The equilibrium set <span
+class="math inline">ℳ<sub><em>A</em><sub>4</sub></sub></span> is now a
+<span class="math inline">3</span>-dimensional volume in the <span
+class="math inline">4</span>-dimensional space <span
+class="math inline">(<em>x</em>, <em>u</em>, <em>v</em>, <em>w</em>)</span>.
+To visualise the characteristic swallowtail geometry, it is instructive
+to plot slices of the equilibrium set for varying values of <span
+class="math inline"><em>u</em></span>, as done in the figure below.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-A4_equilibrium_set.jpeg" style="display: block; margin: 0 auto; max-width: 100%; max-height: 400px; width: auto; padding: 5px;">
+<figcaption>
+Slices of the <span class="math inline"><em>A</em><sub>4</sub></span>
+equilibrium for fixed varying values <span
+class="math inline"><em>u</em> = {1.5, 0.0, −1.5}</span>, revealing the
+unfolding of the non-degenerate critical point into two cusp points and
+three fold lines.
+</figcaption>
+</figure>
+<p>As in the cusp catastrophe, the equilibrium surface (i.e. the slice
+for fixed <span class="math inline"><em>u</em></span>) folds over
+itself, so that the projection into the <span
+class="math inline">(<em>v</em>, <em>w</em>)</span>-plane yields a
+multi-image regions with overlapping pieces of the equilibrium surface.
+The swallowtail caustic unfolds by forming a pocket in the equilibrium
+surface, which is bounded by two cusp points and three fold lines. This
+becomes clearer in the animation below, which visualises the equilibrium
+set for fixed <span class="math inline"><em>u</em></span>. The
+bifurcation set <span
+class="math inline">ℬ<sub><em>A</em><sub>4</sub></sub></span> is a
+two-dimensional surface in the <span
+class="math inline">3</span>-dimensional unfolding space <span
+class="math inline">(<em>u</em>, <em>v</em>, <em>w</em>)</span>, and can
+be readily visualised.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/anim-A4_equilibrium_set.gif" alt="Description 1" style="height: 300px; margin-right: 25px">
+<img src="./notes/catastrophe_theory/figures/fig-A4_bifurcation_set.jpeg" alt="Description 2" style="height: 300px; margin-left: 25px"></p>
+</div>
+<figcaption>
+Left panel: Rotating view of the equilibrium set <span
+class="math inline">ℳ<sub><em>A</em><sub>4</sub></sub></span> for <span
+class="math inline"><em>u</em> = −1.5</span>. Right panel: The
+bifurcation set <span
+class="math inline">ℬ<sub><em>A</em><sub>4</sub></sub></span> of the
+<span class="math inline"><em>A</em><sub>4</sub></span> catastrophe.
+</figcaption>
+</figure>
+<p>In physical applications, the unfolding parameters <span
+class="math inline">(<em>v</em>, <em>w</em>)</span> may correspond to
+the spatial coordinates of a two-dimensional target space, while <span
+class="math inline"><em>u</em></span> corresponds to time coordinate or
+other control parameter that controls the “strength” or “growth” of the
+swallowtail caustic. An observer would therefore typically see “growing”
+slices of <span
+class="math inline">ℬ<sub><em>A</em><sub>4</sub></sub></span> for
+varying <span class="math inline"><em>u</em></span>. This becomes
+apparent when continuously varying <span
+class="math inline"><em>u</em></span> and plotting the equilibrium set
+slices along with the corresponding bifurcation set slices:</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-A4_equil_bif_set.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Animation of the <span class="math inline"><em>u</em></span>-slice of
+the <span class="math inline"><em>A</em><sub>4</sub></span> equilibrium
+(and corresponding singular) set for varying values of <span
+class="math inline"><em>u</em></span>.
+</figcaption>
+</figure>
+<p>This is illustrated in the following the figures, where the
+correspondence with the animation above becomes apparent.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/fig-A4_Berry.jpg" alt="Description 1" style="height: 250px; padding: 20px">
+<img src="./notes/catastrophe_theory/figures/swallowtail_optics.jpg" alt="Description 1" style="height: 250px; padding: 20px">
+<img src="./notes/catastrophe_theory/figures/anim-A4_mesh.gif" alt="Description 1" style="height: 250px; padding: 20px"></p>
+</div>
+<figcaption>
+Left: Swallowtail caustic in an optics experiment, taken from <a
+href="https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf">Berry
+(1980)</a>. Middle panel: another optical swallowtail catastrophe, taken
+from
+https://www.researchgate.net/figure/Two-simulations-of-optical-diffraction-patterns-near-i-a-swallowtail-ii-a_fig1_365445500.
+Right panel: 2D cosmological mesh simulation (Zel’dovich approximation)
+for the formation of a swallowtail cluster.
+</figcaption>
+</figure>
+<p>The swallowtail catastrophe in particular has attracted attention not
+only from scientists, but also in the fine arts. And example is Salvador
+Dalí’s last painting, “The swallow’s tail” (1983), which Dalí created in
+honour of the aesthetics of Thom’s theory of catastrophes and their
+morphogenesis. More recently, engineer and author Allan McRobie has
+interpreted catastrophe theory as the theory of “beautifully curved”
+surfaces, which appear ubiquitously in the organic world, and are found
+to appeal more to the innate human understanding of beauty than the
+simple shapes of solid geometry possibly could. An example of this is
+shown in the right panel of the figure below, where a woman’s curved
+torso is aesthetically forming the equilibrium surface of the
+swallowtail catastrophe.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/Dali_swallowtail.jpg" alt="Description 1" style="height: 250px; padding: 20px">
+<img src="./notes/catastrophe_theory/figures/seduction_curves.jpg" alt="Description 1" style="height: 250px; padding: 20px"></p>
+</div>
+<figcaption>
+Left: Salvador Dali’s “La queue d’aronde” (“The swallow’s tail”) (1983),
+an artistic illustration of Thom’s catastrophe theory. Taken from
+https://www.wikiart.org/en/salvador-dali/the-swallow-s-tail. Right:
+Cover photo of Allan McRobie’s “The seduction of curves” (2017), a
+woman’s torso forming the swallowtail equilibrium surface. Taken from
+https://www.eng.cam.ac.uk/news/seduction-curves-lines-beauty-connect-mathematics-art-and-nude-allan-mcrobie.
+</figcaption>
+</figure>
+<h4 id="a5-butterfly-catastrophe">A<sub>5</sub> butterfly
+catastrophe</h4>
+<p>The last in the list of the corank-1 cuspoid singularities is the
+butterfly catastrophe <span
+class="math inline"><em>x</em><sup>6</sup></span> which is of
+co-dimension <span class="math inline">4</span> with the universal
+unfolding</p>
+<p><span class="math display">$$
+\boxed{f_{A_5}(x) = x^6 + t x^4 + u x^3 + vx^2 + wx}
+$$</span></p>
+<p>The equilibrium and singular sets are given by</p>
+<p><span
+class="math display">ℳ<sub><em>A</em><sub>5</sub></sub> = {(<em>x</em>, <em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 4<em>t</em><em>x</em><sup>3</sup> + 3<em>u</em><em>x</em><sup>2</sup> + 2<em>v</em><em>x</em> + <em>w</em> + 6<em>x</em><sup>5</sup> = 0}</span></p>
+<p><span
+class="math display">𝒮<sub><em>A</em><sub>5</sub></sub> = {(<em>x</em>, <em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 12<em>t</em><em>x</em><sup>2</sup> + 6<em>u</em><em>x</em> + 2<em>v</em> + 30<em>x</em><sup>4</sup> = 0} ,</span></p>
+<p>thus yielding the (somewhat more complicated) bifurcation set</p>
+<p><span
+class="math display">ℬ<sub><em>A</em><sub>5</sub></sub> = {(<em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>) : −13824<em>t</em><sup>5</sup><em>w</em><sup>2</sup> + 13824<em>t</em><sup>4</sup><em>u</em><em>v</em><em>w</em> − 4096<em>t</em><sup>4</sup><em>v</em><sup>3</sup> − 3456<em>t</em><sup>3</sup><em>u</em><sup>3</sup><em>w</em> + 1152<em>t</em><sup>3</sup><em>u</em><sup>2</sup><em>v</em><sup>2</sup> + 86400<em>t</em><sup>3</sup><em>v</em><em>w</em><sup>2</sup> − 89100<em>t</em><sup>2</sup><em>u</em><sup>2</sup><em>w</em><sup>2</sup> − 80640<em>t</em><sup>2</sup><em>u</em><em>v</em><sup>2</sup><em>w</em> + 24576<em>t</em><sup>2</sup><em>v</em><sup>4</sup> + 102060<em>t</em><em>u</em><sup>3</sup><em>v</em><em>w</em> − 31104<em>t</em><em>u</em><sup>2</sup><em>v</em><sup>3</sup> + 202500<em>t</em><em>u</em><em>w</em><sup>3</sup> − 144000<em>t</em><em>v</em><sup>2</sup><em>w</em><sup>2</sup> − 19683<em>u</em><sup>5</sup><em>w</em> + 6561<em>u</em><sup>4</sup><em>v</em><sup>2</sup> − 182250<em>u</em><sup>2</sup><em>v</em><em>w</em><sup>2</sup> + 172800<em>u</em><em>v</em><sup>3</sup><em>w</em> − 36864<em>v</em><sup>5</sup> − 84375<em>w</em><sup>4</sup> = 0}</span></p>
+<p>The equilibrium set is now <span
+class="math inline">4</span>-dimensional in the <span
+class="math inline">5</span>-dimensional space <span
+class="math inline">(<em>x</em>, <em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>)</span>.
+Similarly, the bifurcation set is now a <span
+class="math inline">3</span>-dimensional volume in the <span
+class="math inline">4</span>-dimensional unfolding space <span
+class="math inline">(<em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>)</span>.
+Visualisations of the full structure are therefore difficult. Yet,
+intuition about the butterfly geometry can be gained by considering
+slices for fixed <span
+class="math inline"><em>t</em>, <em>u</em></span>. The following figure
+shows the equilibrium set slice along with corresponding bifurcation set
+slice for fixed <span
+class="math inline">(<em>t</em>, <em>u</em>)</span>.</p>
+<figure style="margin-bottom: 20px">
+<img src="./notes/catastrophe_theory/figures/fig-A5_equil_set.jpeg" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Slice of the <span class="math inline"><em>A</em><sub>5</sub></span>
+equilibrium set for <span
+class="math inline">(<em>t</em>, <em>u</em>) = (−1, 0)</span> seen from
+different angles.
+</figcaption>
+</figure>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/anim-A5_equil_bif_set.gif" alt="Description 1" style="height: 300px; margin-right: 30px">
+<img src="./notes/catastrophe_theory/figures/fig-A5_bif_set.jpeg" alt="Description 2" style="height: 300px; margin-left: 30px"></p>
+</div>
+<figcaption>
+Left panel: Rotating view of the <span
+class="math inline"><em>A</em><sub>5</sub></span> equilibrium set slice
+for <span class="math inline">(<em>t</em>, <em>u</em>) = (−1, 0)</span>.
+Right panel: Corresponding slice of the <span
+class="math inline"><em>A</em><sub>5</sub></span> bifurcation set.
+</figcaption>
+</figure>
+<p>Again, more intution may be gained by smoothly varying the parameters
+<span class="math inline">(<em>t</em>, <em>u</em>)</span>. This is done
+in the following animation, where <span
+class="math inline">(<em>t</em>, <em>u</em>)</span> are varied along a
+circle about the origin. Both the equilibrium set slice and the
+corresponding bifurcation set slice are shown in the middle and right
+panels. The animation nicely illustrates how the butterfly catastrophe
+unfolds into lower catastrophes, namely swallowtails, cups and
+connecting fold lines, at different points in the unfolding space.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-A5_equil_bif_set_variation.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Slices of the <span class="math inline"><em>A</em><sub>5</sub></span>
+bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>5</sub></sub></span> for <span
+class="math inline">(<em>t</em>, <em>u</em>)</span> varied in a circle
+of radius of radius <span class="math inline"><em>r</em> = 1.5</span>
+about the origin.
+</figcaption>
+</figure>
+<h3 id="corank-2-catastrophes-the-umbilics">Corank-2 catastrophes: the
+umbilics</h3>
+<p>The corank-1 catastrophes were trivial to derive from the structural
+stability of the canonical <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span> singularity.
+For the corank-2 catastrophes, more work is needed, and we again follow
+<a
+href="https://www.cambridge.org/core/books/an-introduction-to-catastrophe-theory/D5ECA839997CD9C2A247C413E69CD2B8">Saunders
+(1980)</a> for the detailed derivation.</p>
+<p>To investigate the non-degenerate critical points of corank 2, let us
+start the derivation from the 3-jet of a function with two variables
+<span class="math inline">(<em>x</em>, <em>y</em>)</span> such that the
+2-jet identically vanishes:</p>
+<p><span
+class="math display"><em>j</em><sup>3</sup>(<em>x</em>, <em>y</em>) = (<em>a</em><sub>1</sub><em>x</em> + <em>b</em><sub>1</sub><em>y</em>)(<em>a</em><sub>2</sub><em>x</em> + <em>b</em><sub>2</sub><em>y</em>)(<em>a</em><sub>3</sub><em>x</em> + <em>b</em><sub>3</sub><em>y</em>)</span></p>
+<p>Our task now is to find suitable diffeomorphisms to bring this 3-jet
+into (one possible choice of) the distinct forms for the canonical
+singularities. The proposed factorised form of the 3-jet is particularly
+nice, as the 3 corank-2 singularities turn out to correspond to three
+possible cases for roots the jet polynomial, namely (i) real distinct
+roots, (ii) complex distinct roots and (iii) one pair of repeated real
+roots. We now go through these cases and discuss their geometries.</p>
+<h4 id="d4-hyperbolic-umbilic">D<sub>4</sub><sup>+</sup> hyperbolic
+umbilic</h4>
+<p>Consider first the case of complex roots. Because complex roots of a
+real polynomial appear in pairs, we can conclude w.l.o. generality that
+<span
+class="math inline">(<em>a</em><sub>3</sub> = <em>ā</em><sub>2</sub>, <em>b</em><sub>3</sub> = <em>b̄</em><sub>2</sub>)</span>
+and write <span
+class="math inline"><em>j</em><sup>3</sup>(<em>x</em>, <em>y</em>) = (<em>a</em><sub>1</sub><em>x</em> + <em>b</em><sub>1</sub><em>y</em>)((ℜ(<em>a</em><sub>2</sub>)<em>x</em> + ℜ(<em>b</em><sub>2</sub>)<em>y</em>)<sup>2</sup> + (ℑ(<em>a</em><sub>2</sub>)<em>x</em> + ℑ(<em>b</em><sub>2</sub>)<em>y</em>)<sup>2</sup>)</span>.
+Using two linear transformations (diffeomorphisms), we can write</p>
+<p><span
+class="math display"><em>j</em><sup>3</sup>(<em>x</em>, <em>y</em>) ∼ (<em>a</em><em>x</em> + <em>b</em><em>y</em>)(<em>x</em><sup>2</sup> + <em>y</em><sup>2</sup>) ∼ <em>x</em><sup>3</sup> + <em>x</em><em>y</em><sup>2</sup> ∼ <em>x</em><sup>3</sup> + <em>y</em><sup>3</sup></span></p>
+<p>The first transformation used was <span
+class="math inline">(<em>x</em> ↦ <em>a</em><em>x</em> + <em>b</em><em>y</em>, <em>y</em> ↦ <em>b</em><em>x</em> − <em>a</em><em>y</em>)</span>,
+and the second diffeomorphism was found by writing <span
+class="math inline">(<em>x</em> + <em>y</em>)<sup>3</sup> + (<em>x</em> − <em>y</em>)<sup>3</sup> = 2<em>x</em><sup>3</sup> + 6<em>x</em><em>y</em><sup>2</sup></span>.</p>
+<p>The form <span
+class="math inline"><em>η</em>(<em>x</em>, <em>y</em>) = <em>x</em><sup>3</sup> + <em>x</em><em>y</em><sup>2</sup></span>
+is the one used by <a
+href="https://link.springer.com/article/10.1007/BF01077644">Arnol’d
+(1972)</a>, and we will see below that it is parallel to the canonical
+form of elliptic umbilic. For physical applications, the form <span
+class="math inline"><em>η</em>(<em>x</em>, <em>y</em>) = <em>x</em><sup>3</sup> + <em>y</em><sup>3</sup></span>
+is generally found to be more useful, and we therefore take the
+canonical form of the form of the <span
+class="math inline"><em>D</em><sub>4</sub><sup>+</sup></span>
+singularity to be</p>
+<p><span class="math display">$$
+\boxed{D_4^+: \quad \eta(x,y) = x^3 + y^3}
+$$</span></p>
+<p>We are now interested in the universal unfolding, which we will find
+using <em>Siersma’s trick</em>. One starts by considering a versal
+unfolding <span
+class="math inline"><em>g</em>(<em>x</em>, <em>y</em>)</span> of the
+canonical singularity by adding all possible monomials in <span
+class="math inline"><em>x</em>, <em>y</em></span>:</p>
+<p><span
+class="math display"><em>g</em>(<em>x</em>, <em>y</em>) = <em>η</em>(<em>x</em>, <em>y</em>) + ∑<sub><em>i</em>, <em>j</em></sub><em>α</em><sub><em>i</em>, <em>j</em></sub><em>x</em><sup><em>i</em></sup><em>x</em><sup><em>j</em></sup></span></p>
+<p>Clearly, this is not the universal unfolding as several of the added
+terms can be eliminated by a suitable diffeomorphism, just as <span
+class="math inline"><em>x</em><sup><em>n</em> − 1</sup></span> was
+eliminated for the <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span>-singularities
+above. Consider now an infinitesimal diffeomorphism <span
+class="math inline"><em>Ψ</em> : {<em>x</em> ↦ <em>x</em> + <em>ψ</em>(<em>x</em>, <em>y</em>), <em>y</em> ↦ <em>y</em> + <em>χ</em>(<em>x</em>, <em>y</em>)}</span>
+with some polynomial functions <span
+class="math inline"><em>ψ</em>(<em>x</em>, <em>y</em>), <em>χ</em>(<em>x</em>, <em>y</em>)</span>.
+This infinitesimal diffeomorphism transforms the canonical singularity
+to</p>
+<p><span class="math display">$$
+\Psi :  \eta(x,y) \mapsto \eta(x,y) + \psi(x,y) \frac{\partial
+\eta(x,y)}{\partial x} + \chi(x,y) \frac{\partial \eta(x,y)}{\partial y}
+$$</span></p>
+<p>This implies that a suitable choice of the functions <span
+class="math inline"><em>ψ</em>(<em>x</em>, <em>y</em>), <em>χ</em>(<em>x</em>, <em>y</em>)</span>
+can reproduce any terms in <span
+class="math inline"><em>g</em>(<em>x</em>, <em>y</em>)</span> that are
+multiples of either <span class="math inline">$\frac{\partial
+\eta}{\partial x}$</span> or <span class="math inline">$\frac{\partial
+\eta}{\partial y}$</span>. These terms can therefore not be part of the
+universal unfolding, and can be eliminated. The remaining terms may or
+may not be the terms in the universal unfolding.</p>
+<p>This is visually illustrated by arranging all monomials in a triangle
+such that any term is a multiple of its upper neighbors. One now draws a
+shadow from the terms <span
+class="math inline">∂<sub><em>x</em></sub><em>η</em></span> and <span
+class="math inline">∂<sub><em>y</em></sub><em>η</em></span> to exclude
+their multiples. For the <span
+class="math inline"><em>D</em><sub>4</sub><sup>+</sup></span>
+singularity, these are <span
+class="math inline">∂<sub><em>x</em></sub><em>η</em> ∼ <em>x</em><sup>2</sup></span>
+and <span
+class="math inline">∂<sub><em>y</em></sub><em>η</em> ∼ <em>y</em><sup>2</sup></span>.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-triangle_D4p.jpg" style="display: block; margin: 0 auto; height: 180px; padding: 5px;">
+<figcaption>
+Siersma’s triangle for the <span
+class="math inline"><em>D</em><sub>4</sub><sup>+</sup></span>
+singularity.
+</figcaption>
+</figure>
+<p>Here, we find three unshaded terms <span
+class="math inline"><em>x</em>, <em>y</em>, <em>x</em><em>y</em></span>
+which may appear in the universal unfolding. But the <span
+class="math inline"><em>D</em><sub>4</sub><sup>+</sup></span>
+catastrophe has codimension 3 (the least codimension for corank-2
+singularities), and we therefore conclude that we have obtained
+universal unfolding with these three terms:</p>
+<p><span class="math display">$$
+\boxed{f_{D_4^+}(x) = x^3 + y^3  + w x y - u x - v y}
+$$</span></p>
+<p>From here on, we can proceed as before. The equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>
+of the elliptic umbilic caustic is given by the two simultaneous
+equations</p>
+<p><span
+class="math display">ℳ<sub><em>D</em><sub>4</sub><sup>+</sup></sub> = {(<em>x</em>, <em>y</em>, <em>u</em>, <em>v</em>, <em>w</em>) : −<em>u</em> + <em>w</em><em>y</em> + 3<em>x</em><sup>2</sup> = 0    − <em>v</em> + <em>w</em><em>x</em> + 3<em>y</em><sup>2</sup> = 0}</span></p>
+<p>and the singular set <span
+class="math inline">𝒮<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>
+is given by</p>
+<p><span
+class="math display">𝒮<sub><em>D</em><sub>4</sub><sup>+</sup></sub> = {(<em>x</em>, <em>y</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 36<em>x</em><em>y</em> − <em>w</em><sup>2</sup> = 0}</span></p>
+<p>Eliminating the essential variables <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> yields the
+bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span></p>
+<p><span
+class="math display">ℬ<sub><em>D</em><sub>4</sub><sup>+</sup></sub> = {(<em>u</em>, <em>v</em>, <em>w</em>) : −<em>u</em><sup>4</sup> + 8<em>u</em><sup>3</sup><em>w</em><sup>2</sup> − 2<em>u</em><sup>2</sup><em>v</em><sup>2</sup> − 18<em>u</em><sup>2</sup><em>w</em><sup>4</sup> − 24<em>u</em><em>v</em><sup>2</sup><em>w</em><sup>2</sup> − <em>v</em><sup>4</sup> − 18<em>v</em><sup>2</sup><em>w</em><sup>4</sup> + 27<em>w</em><sup>8</sup> = 0}</span></p>
+<p>The bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>
+is a 2-dimensional surface in the unfolding space <span
+class="math inline">(<em>u</em>, <em>v</em>, <em>w</em>)</span>, and may
+therefore be readily visualised. In physical application, the parameter
+<span class="math inline"><em>w</em></span> typically corresponds to a
+time or other strength parameter, specifying the growth of the caustic.
+It is therefore most instructive to also plot a slice of the bifurcation
+set for fixed <span class="math inline"><em>u</em></span>, as this is
+the configuration that may be observed e.g. in optical experiments at a
+given time.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-D4hyp_bifurcation_set.jpeg" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>
+of the hyperbolic caustic, with a slice for fixed <span
+class="math inline"><em>w</em> = −1</span> on the right hand side
+</figcaption>
+</figure>
+<p>More intuiton about the arguably beautiful purse-like folding of the
+bifurctation is obtained by rotating the surface</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-D4hyp_bifurcation_set.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Rotating view of the bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>.
+</figcaption>
+</figure>
+<p>While we have now shown the characteristic geometry of the hyperbolic
+umbilic caustic as may be observed in experiments, it is worthwhile to
+also investigate the equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>.
+Here, this is a 3-dimensional volume. If one again considers a slice for
+fixed <span class="math inline"><em>w</em></span> (i.e. physically
+considers a fixed-time slice), the 2-dimensional <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>-slice
+may be readily visualised e.g. by eliminating the state variable <span
+class="math inline"><em>x</em></span> (i.e. projecting into the space
+<span
+class="math inline">(<em>y</em>, <em>u</em>, <em>v</em>)</span>).</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-D4p_equil_bif_set.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Rotating view of a slice of the equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>+</sup></sub></span>
+for fixed <span class="math inline"><em>w</em> = 1</span>, projected
+into <span
+class="math inline">(<em>y</em>, <em>u</em>, <em>v</em>)</span> by
+eliminating <span class="math inline"><em>x</em></span>.
+</figcaption>
+</figure>
+<p>The rotating view of the equilibrium surface beautifully illustrates
+the argument brought forward above, namely that the equilibrium and
+singular sets of the catastrophes are smooth manifolds, with the
+singular structure in the bifurcation sets miraculously arising from
+projections “along the line of sight”.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/fig-D4p_Berry.jpg" alt="Description 1" style="height: 250px; margin-right: 25px">
+<img src="./notes/catastrophe_theory/figures/anim-D4p_mesh.gif" alt="Description 1" style="height: 250px;  margin-left: 25px"></p>
+</div>
+<figcaption>
+Left: hyperbolic umbilic caustic in an optical experiment, taken from <a
+href="https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf">Berry
+(1980)</a>. Right: Cosmological 2D mesh simulation (Zel’dovich
+approximation) of a hyperbolic umbilic cluster.
+</figcaption>
+</figure>
+<h4 id="d4--elliptic-umbilic">D<sub>4</sub><sup>-</sup> elliptic
+umbilic</h4>
+<p>Consider now the case of three real and distinct root, i.e. the
+coefficient pairs <span
+class="math inline">(<em>a</em><sub><em>i</em></sub>, <em>b</em><sub><em>i</em></sub>)</span>
+are distinct. One can then write the 3-jet as</p>
+<p><span
+class="math display"><em>j</em><sup>3</sup>(<em>x</em>, <em>y</em>) ∼ (<em>a</em><em>x</em> + <em>b</em><em>y</em>)<em>x</em><em>y</em> ∼ (<em>x</em> + <em>y</em>)<em>x</em><em>y</em> ∼ <em>x</em>(<em>x</em><sup>2</sup> − <em>y</em><sup>2</sup>) ,</span></p>
+<p>where we first used the diffeomorphism <span
+class="math inline">(<em>x</em> ↦ <em>a</em><sub>2</sub><em>x</em> + <em>b</em><sub>2</sub><em>y</em>, <em>y</em> ↦ <em>a</em><sub>2</sub><em>x</em> + <em>b</em><sub>2</sub><em>y</em>)</span>
+and then <span
+class="math inline">(<em>x</em> ↦ <em>x</em> + <em>y</em>, <em>y</em> ↦ <em>x</em> − <em>y</em>)</span>.</p>
+<p>We thus take the canonical form of the <span
+class="math inline"><em>D</em><sub>4</sub><sup>−</sup></span>
+singularity to be</p>
+<p><span class="math display">$$
+\boxed{D_4^-: \quad \eta(x,y) = x^3 - x y^2}
+$$</span></p>
+<p>and the nomenclature <span
+class="math inline"><em>D</em><sub>4</sub><sup>±</sup></span> in
+Arnold’s form <span
+class="math inline"><em>x</em><sup>3</sup> ± <em>x</em><em>y</em><sup>2</sup></span>
+is evident.</p>
+<p>We now again find the universal unfolding Siersma’s trick. The
+relevant derivatives are <span
+class="math inline">∂<sub><em>x</em></sub><em>η</em> ∼ <em>x</em><sup>2</sup> − <em>y</em><sup>2</sup></span>
+and <span
+class="math inline">∂<sub><em>y</em></sub><em>η</em> ∼ <em>x</em><em>y</em></span>.
+While the latter has an obvious place in the diagram, the former does
+not. One can, however, use these terms to write <span
+class="math inline"><em>x</em><sup>3</sup> = <em>x</em>(<em>x</em><sup>2</sup> − <em>y</em><sup>2</sup>) + <em>y</em>(<em>y</em><em>x</em>)</span>
+and similary for <span
+class="math inline"><em>y</em><sup>3</sup></span>, so that both <span
+class="math inline"><em>x</em><sup>3</sup></span> and <span
+class="math inline"><em>y</em><sup>3</sup></span> may be eliminated.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-triangle_D4m.jpg" style="display: block; margin: 0 auto; height: 180px;  padding: 5px;">
+<figcaption>
+Siersma’s triangle for the <span
+class="math inline"><em>D</em><sub>4</sub><sup>−</sup></span>
+singularity.
+</figcaption>
+</figure>
+<p>There are 4 unshaded terms, <span
+class="math inline"><em>x</em>, <em>y</em>, <em>x</em><sup>2</sup></span>
+and <span class="math inline"><em>y</em><sup>2</sup></span> left. But
+the <span class="math inline"><em>D</em><sub>4</sub><sup>−</sup></span>
+singularity again has codimension 3, so one further variable must be
+eliminated. If one introduces a symmetric unfolding term <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>,
+one can easily eliminate both <span
+class="math inline"><em>x</em><sup>2</sup></span> and <span
+class="math inline"><em>y</em><sup>2</sup></span> by writing <span
+class="math inline">2<em>x</em><sup>2</sup> = (<em>x</em><sup>2</sup> + <em>y</em><sup>2</sup>) + (<em>x</em><sup>2</sup> − <em>y</em><sup>2</sup>)</span>
+and similarly for <span
+class="math inline"><em>y</em><sup>2</sup></span>. Note that one could
+equivalently use <span class="math inline"><em>x</em><sup>2</sup></span>
+or <span class="math inline"><em>y</em><sup>2</sup></span> to eliminate
+the other respectively, but the symmetric form is generally found more
+useful. We therefore write the universal unfolding as</p>
+<p><span class="math display">$$
+\boxed{f_{D_4^-} = 1/3 x^3 - x y^2  + w (x^2 + y^2) - u x + v y}
+$$</span></p>
+<p>The equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span>
+of the elliptic umbilic caustic is given by the two simultaneous
+equations</p>
+<p><span
+class="math display">ℳ<sub><em>D</em><sub>4</sub><sup>−</sup></sub> = {(<em>x</em>, <em>y</em>, <em>u</em>, <em>v</em>, <em>w</em>) : −<em>u</em> + 2<em>w</em><em>x</em> + <em>x</em><sup>2</sup> − <em>y</em><sup>2</sup> = 0   <em>v</em> + 2<em>w</em><em>y</em> − 2<em>x</em><em>y</em> = 0}</span></p>
+<p>and the singular set <span
+class="math inline">𝒮<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span>
+is given by</p>
+<p><span
+class="math display">𝒮<sub><em>D</em><sub>4</sub><sup>−</sup></sub> = {(<em>x</em>, <em>y</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 4<em>w</em><sup>2</sup> − 4<em>x</em><sup>2</sup> − 4<em>y</em><sup>2</sup> = 0}</span></p>
+<p>Eliminating the essential variables <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> yields the
+bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span></p>
+<p><span
+class="math display">ℬ<sub><em>D</em><sub>4</sub><sup>−</sup></sub> = {(<em>u</em>, <em>v</em>, <em>w</em>) : −<em>u</em><sup>4</sup> + 8<em>u</em><sup>3</sup><em>w</em><sup>2</sup> − 2<em>u</em><sup>2</sup><em>v</em><sup>2</sup> − 18<em>u</em><sup>2</sup><em>w</em><sup>4</sup> − 24<em>u</em><em>v</em><sup>2</sup><em>w</em><sup>2</sup> − <em>v</em><sup>4</sup> − 18<em>v</em><sup>2</sup><em>w</em><sup>4</sup> + 27<em>w</em><sup>8</sup> = 0} ,</span></p>
+<p>which is a two-dimensional surface the three-dimensional unfolding
+space <span
+class="math inline">(<em>u</em>, <em>v</em>, <em>w</em>)</span>. The
+full bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span>
+may be readily visualised in the figure below</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-D4ell_bifurcation_set.jpeg" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<figcaption>
+Bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span>
+of the umbilic catastrophe, and slice for <span
+class="math inline"><em>u</em> = −0.5</span>.
+</figcaption>
+<figure>
+<p>Clearly visible is the characteristic triangular geometry, with the
+elliptic umbilic point unfolding into three cusp points connected by
+fold lines. As for the hyperbolic umbilic, it is again instructive to
+plot a slice of the equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span>
+for fixed <span class="math inline"><em>w</em></span>, this time by
+projecting into <span
+class="math inline">(<em>x</em>, <em>u</em>, <em>v</em>)</span>. The
+following animation beautifully illustrates how the equilibrium is a
+smooth surface, with the triangular structure arising from the
+projection of the singular set along the line of sight.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-D4m_equil_bif_set.gif" style="display: block; margin: 0 auto; height: 300px; padding: 5px;">
+<figcaption>
+Rotating view of the equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>4</sub><sup>−</sup></sub></span>
+of the elliptic umbilic for <span
+class="math inline"><em>w</em> = −0.5</span>.
+</figcaption>
+</figure>
+<p>The characteristic triangular geometry of the elliptic umbilic
+caustic is readily observed in physical applications.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/fig-D4m_Berry.jpg" alt="Description 1" style="height: 220px; margin-right: 20px">
+<img src="./notes/catastrophe_theory/figures/fig-D4m_Berry_2.jpg" alt="Description 1" style="height: 220px; margin-left: 20px;  margin-right: 20px">
+<img src="./notes/catastrophe_theory/figures/anim-D4m_mesh.gif" alt="Description 1" style="height: 220px; margin-left: 20px"></p>
+</div>
+<figcaption>
+Left and umbilic: elliptic umbilics in optical experiments, both taken
+from <a
+href="https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf">Berry
+(1980)</a>. In the middle panel, the wavelength is comparable to the
+length scale of the caustic, thus resulting in a clear wave interference
+pattern pattern. Right: Cosmological 2D mesh simulation (Zel’dovich
+approximation) of an elliptic umbilic cluster.
+</figcaption>
+</figure>
+<h4 id="d5-parabolic-umbilic">D<sub>5</sub> parabolic umbilic</h4>
+<p>The parabolic umbilic corresponds to the case of a pair of repeated
+roots. One can write</p>
+<p><span
+class="math display"><em>j</em><sup>3</sup>(<em>x</em>, <em>y</em>) ∼ (<em>a</em><sub>1</sub><em>x</em> + <em>b</em><sub>1</sub><em>y</em>)<sup>2</sup>(<em>a</em><sub>3</sub><em>x</em> + <em>a</em><sub>3</sub><em>y</em>) ∼ <em>x</em><sup>2</sup><em>y</em></span></p>
+<p>The equality of the repeated roots gives an additional constraint
+equation, thus raising the codimension to 4. One can show that this
+requires one to consider the 4-jet</p>
+<p><span
+class="math display"><em>j</em><sup>4</sup>(<em>x</em>, <em>y</em>) = <em>x</em><sup>2</sup><em>y</em> + <em>h</em>(<em>x</em>, <em>y</em>)</span></p>
+<p>to obtain the canonical form of the singularity. Writing <span
+class="math inline"><em>h</em>(<em>x</em>, <em>y</em>) = <em>α</em><sub>1</sub><em>y</em><sup>4</sup> + <em>α</em><sub>2</sub><em>y</em><sup>3</sup><em>x</em> + <em>α</em><sub>3</sub><em>y</em><sup>2</sup><em>x</em><sup>2</sup> + <em>α</em><sub>4</sub><em>x</em><em>y</em><sup>3</sup> + <em>α</em><sub>5</sub><em>x</em><sup>4</sup></span>,
+one now wants to find a diffeomorphism <span
+class="math inline"><em>Ψ</em> : {<em>x</em> ↦ <em>x</em> + <em>ψ</em>(<em>x</em>, <em>y</em>), <em>y</em> ↦ <em>y</em> + <em>χ</em>(<em>x</em>, <em>y</em>)}</span>
+that does not alter the 3-jet to and simplify the 4-jet. It can be shown
+that one can choose <span class="math inline">$\psi(x,y) = -\frac{1}{2}
+\alpha_2 y^2, \chi(x,y) = -(\alpha_3 y^2 + \alpha_4 x y + \alpha_5
+x^2)$</span> to obtain <span
+class="math inline"><em>j</em><sup>4</sup>(<em>x</em>, <em>y</em>) ∼ <em>x</em><sup>2</sup><em>y</em> + <em>y</em><sup>4</sup></span>,
+which we take as the canonical form of the <span
+class="math inline"><em>D</em><sub>5</sub></span> singularity:</p>
+<p><span class="math display">$$
+\boxed{D_5: \quad \eta(x,y) = y^4 + x^2 y }
+$$</span></p>
+<p>Note that a further degeneracy in the 3-jet or the requirement of a
+higher term (y^4) vanishing in the 4-jet would raise the codimension to
+4. The <span class="math inline"><em>D</em><sub>5</sub></span>
+singularity is therefore the last in the list of the catastrophes up to
+codimension 4.</p>
+<p>The universal unfolding is again found by considering <span
+class="math inline">∂<sub><em>x</em></sub><em>η</em> ∼ <em>x</em><em>y</em></span>
+and <span
+class="math inline">∂<sub><em>y</em></sub><em>η</em> ∼ <em>x</em><sup>2</sup> + <em>y</em><sup>3</sup></span>,
+where the former has a place in the diagram. One can draw further
+shadows from <span
+class="math inline"><em>x</em><sup>3</sup> = −<em>y</em><sup>2</sup>(<em>x</em><em>y</em>) + <em>x</em>(<em>x</em><sup>2</sup> + <em>y</em><sup>3</sup>)</span>
+and <span
+class="math inline"><em>y</em><sup>4</sup> = <em>y</em>(<em>x</em><sup>2</sup> + <em>y</em><sup>3</sup>) − <em>x</em>(<em>x</em><em>y</em>)</span>.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-triangle_D5.jpg" style="display: block; margin: 0 auto; height: 180px; padding: 5px;">
+<figcaption>
+Siersma’s triangle for the <span
+class="math inline"><em>D</em><sub>5</sub></span> singularity.
+</figcaption>
+</figure>
+<p>This leaves 5 unshaded terms <span
+class="math inline"><em>x</em>, <em>y</em>, <em>x</em><sup>2</sup>, <em>y</em><sup>2</sup>, <em>y</em><sup>3</sup></span>
+of which <span class="math inline"><em>y</em><sup>3</sup></span> may be
+eliminated from a combination of <span
+class="math inline"><em>x</em><sup>2</sup></span> and <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>3</sup></span>.
+We therefore take the universal unfolding of the <span
+class="math inline"><em>D</em><sub>5</sub></span> singularity to be.</p>
+<p><span class="math display">$$
+\boxed{f_{D_5} = y^4 + x^2 y + w x^2 + t y^2 - u x - v y}
+$$</span></p>
+<p>The equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>5</sub></sub></span> is given
+by</p>
+<p><span
+class="math display">ℳ<sub><em>D</em><sub>5</sub></sub> = {(<em>x</em>, <em>y</em>, <em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>) :  = −<em>u</em> + 2<em>w</em><em>x</em> + 2<em>x</em><em>y</em> = 0    − <em>v</em> + <em>x</em><sup>2</sup> + 2<em>t</em><em>y</em> + 4<em>y</em><sup>3</sup> = 0}</span></p>
+<p>and the singular set <span
+class="math inline">𝒮<sub><em>D</em><sub>5</sub></sub></span> is</p>
+<p><span
+class="math display">𝒮<sub><em>D</em><sub>5</sub></sub> = {(<em>x</em>, <em>y</em>, <em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 4<em>t</em><em>w</em> − 4<em>x</em><sup>2</sup> + 4<em>t</em><em>y</em> + 24<em>w</em><em>y</em><sup>2</sup> + 24<em>y</em><sup>3</sup> = 0}</span></p>
+<p>Finally, the bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>5</sub></sub></span> is
+obtained as</p>
+<p><span
+class="math display">ℬ<sub><em>D</em><sub>5</sub></sub> = {(<em>t</em>, <em>u</em>, <em>v</em>, <em>w</em>) : 1889568<em>u</em><sup>5</sup> − 524880<em>u</em><sup>4</sup><em>w</em><sup>2</sup> − 7558272<em>u</em><sup>3</sup><em>v</em><em>w</em><sup>2</sup> + 58320<em>u</em><sup>3</sup><em>w</em><sup>4</sup> + 1259712<em>u</em><sup>2</sup><em>v</em><em>w</em><sup>4</sup> + 839808<em>t</em><em>u</em><sup>2</sup><em>w</em><sup>5</sup> − 3240<em>u</em><sup>2</sup><em>w</em><sup>6</sup> − 69984<em>u</em><em>v</em><em>w</em><sup>6</sup> − 93312<em>t</em><em>u</em><em>w</em><sup>7</sup> + 90<em>u</em><em>w</em><sup>8</sup> + 1296<em>v</em><em>w</em><sup>8</sup> + 2592<em>t</em><em>w</em><sup>9</sup> − <em>w</em><sup>10</sup> + 5184<em>w</em><sup>11</sup> = 0}</span></p>
+<p>The geometry of the parabolic umbilic is arguably the most
+complicated of all the objects discussed in these notes. Note that the
+equilibrium set <span
+class="math inline">ℳ<sub><em>D</em><sub>5</sub></sub></span> is
+4-dimensional hypersurface in the 6-dimensional <span
+class="math inline">(<strong>x</strong>, <strong>u</strong>)</span> and
+the bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>5</sub></sub></span> is a
+3-dimensional volume in the space of unfolding parameters. Intuition may
+be gained by plotting slices of the bifurcation set for varying <span
+class="math inline">(<em>t</em>, <em>u</em>)</span>, as in the following
+figure</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/fig-D5_bifurcation_sets.jpg" style="display: block; margin: 0 auto; height: auto; width: 100%; padding: 5px;">
+<figcaption>
+Slices of the <span class="math inline"><em>D</em>5</span> bifurcation
+set <span class="math inline">ℬ<sub><em>D</em><sub>5</sub></sub></span>
+for <span
+class="math inline">(<em>t</em>, <em>u</em>) = {(−1, 0), (0, 1), (−0.8, −0.5)}</span>.
+</figcaption>
+</figure>
+<p>Interestingly, the parabolic umbilic exhibits quite distinct
+geometries for different parameter values <span
+class="math inline">(<em>t</em>, <em>u</em>)</span>, some of which are
+typically displayed in textbooks. More intuition may be gained by
+plotting the bifurcation sets for smoothly varying values $(t,u), as
+done in the following animation.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/anim-D5_bifurcation_set_variation.gif" style="display: block; margin: 0 auto; height: 300px; padding: 5px;">
+<figcaption>
+Slices of the <span class="math inline"><em>D</em><sub>5</sub></span>
+bifurcation set <span
+class="math inline">ℬ<sub><em>D</em><sub>5</sub></sub></span> for <span
+class="math inline">(<em>t</em>, <em>u</em>)</span> varied in a unit
+circle about the origin.
+</figcaption>
+</figure>
+<p>Here, one nicely observes the different configurations which <a
+href="https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&amp;redir_esc=y">Thom
+(1972)</a> already described in his very original work on morphogenesis.
+As one crosses <span class="math inline">(1, 0)</span>, the
+<em>beak-to-beak</em> configuration turns into two swallowtails, which
+in turn disappear and turn into a <em>dovetail</em> configuration. At
+<span class="math inline">(0, −1)</span>, an isolated bifurcation point
+at the origin, which grows first into a <em>lisp</em> configuration and
+then a <em>hyperbolic umbilic focus</em> of maximal extend at about
+<span class="math inline">(...)</span>. The triangle then shrinks into
+an <em>elliptic focus</em> which eventually disappears. A <em>piercing
+configration</em> then forms around <span
+class="math inline">(−0.2, 0.8)</span>, out of which the
+<em>beak-to-beak</em> emerges again.</p>
+<p>It is, however, difficult to go beyond the shown <span
+class="math inline">(<em>t</em>, <em>u</em>)</span> slices and
+understand the morphogenesis of the bifurcation set, and even more the
+equilibrium set, in the whole unfolding space.</p>
+<figure>
+<div
+style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
+<p><img src="./notes/catastrophe_theory/figures/fig-D5_Berry_1.jpg" alt="Description 1" style="height: 200px; margin-right: 25px">
+<img src="./notes/catastrophe_theory/figures/fig-D5_Berry_2.jpg" alt="Description 1" style="height: 200px;  margin-left: 25px"></p>
+</div>
+<figcaption>
+Two illustrations of parabolic umbilics in an optical experiments, for
+different points in the unfolding space, thus resulting in the piercing
+and hyperbolic focus configuration respectively. Taken from <a
+href="https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf">Berry
+(1980)</a>
+</figcaption>
+</figure>
+<h3 id="summary-of-the-seven-elementary-catastrophes">Summary of the
+seven elementary catastrophes</h3>
+<p>The derivation of the seven elementary catastrophes is now complete.
+The results are summarised below:</p>
+<table>
+<thead>
+<tr>
+<th>
+name
+</th>
+<th>
+symbol
+</th>
+<th>
+singularity
+</th>
+<th>
+unfolding
+</th>
+<th>
+corank
+</th>
+<th>
+codimension
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+<em>fold</em>
+</td>
+<td>
+<span class="math inline"><em>A</em><sub>2</sub></span>
+</td>
+<td>
+<span class="math inline"><em>x</em><sup>3</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>3</sup> + <em>μ</em><sub>1</sub><em>x</em></span>
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+<em>cusp</em>
+</td>
+<td>
+<span class="math inline"><em>A</em><sub>3</sub></span>
+</td>
+<td>
+<span class="math inline"><em>x</em><sup>4</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>4</sup> + <em>μ</em><sub>1</sub><em>x</em><sup>2</sup> + <em>μ</em><sub>2</sub><em>x</em></span>
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+<em>swallowtail</em>
+</td>
+<td>
+<span class="math inline"><em>A</em><sub>4</sub></span>
+</td>
+<td>
+<span class="math inline"><em>x</em><sup>5</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>5</sup> + <em>μ</em><sub>1</sub><em>x</em><sup>3</sup> + <em>μ</em><sub>2</sub><em>x</em><sup>2</sup> + <em>μ</em><sub>3</sub><em>x</em></span>
+</td>
+<td>
+1
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+<em>butterfly</em>
+</td>
+<td>
+<span class="math inline"><em>A</em><sub>5</sub></span>
+</td>
+<td>
+<span class="math inline"><em>x</em><sup>6</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>6</sup> + <em>μ</em><sub>1</sub><em>x</em><sup>4</sup> + <em>μ</em><sub>2</sub><em>x</em><sup>3</sup> + <em>μ</em><sub>3</sub><em>x</em><sup>2</sup> + <em>μ</em><sub>4</sub><em>x</em></span>
+</td>
+<td>
+1
+</td>
+<td>
+4
+</td>
+</tr>
+<tr>
+<td>
+<em>ell. umbilic</em>
+</td>
+<td>
+<span class="math inline"><em>D</em><sub>4</sub><sup>−</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>3</sup> − <em>x</em><em>y</em><sup>2</sup></span>
+</td>
+<td>
+<span class="math inline">$\frac{1}{3} x^3 - x y^2 + \mu_1 (x^2 + y^2) -
+\mu_2 x + \mu_3 y$</span>
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+<em>hyp. umbilic</em>
+</td>
+<td>
+<span class="math inline"><em>D</em><sub>4</sub><sup>+</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>3</sup> + <em>y</em><sup>3</sup></span>
+</td>
+<td>
+<span
+class="math inline"><em>x</em><sup>3</sup> + <em>y</em><sup>3</sup> + <em>μ</em><sub>1</sub><em>x</em><em>y</em> − <em>μ</em><sub>2</sub><em>x</em> − <em>μ</em><sub>3</sub><em>y</em></span>
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+<em>par. umbilic</em>
+</td>
+<td>
+<span class="math inline"><em>D</em><sub>5</sub></span>
+</td>
+<td>
+<span
+class="math inline"><em>y</em><sup>4</sup> + <em>x</em><sup>2</sup><em>y</em></span>
+</td>
+<td>
+<span
+class="math inline"><em>y</em><sup>4</sup> + <em>x</em><sup>2</sup><em>y</em> + <em>μ</em><sub>1</sub><em>x</em><sup>2</sup> + <em>μ</em><sub>2</sub><em>y</em><sup>2</sup> − <em>μ</em><sub>3</sub><em>x</em> − <em>μ</em><sub>4</sub><em>y</em></span>
+</td>
+<td>
+2
+</td>
+<td>
+4
+</td>
+</tr>
+</table>
+<p>Having discussed the characteristic geometries of the seven
+elementary catastrophes, I would like to conclude this section with a
+picture of work. Naum Gabo’s intriguing “Linear Construction in Space
+No. 2” (1958). The sculpture shows a smooth and intricately curved
+structure made solely from organic shapes. An observer sees the
+structure as if were projected along their line of sight, and the shapes
+that are folding over the projected direction are observed as caustic
+points, thus beautifully illustrating the mathematical and physical
+concepts we have discussed above.</p>
+<figure>
+<img src="./notes/catastrophe_theory/figures/Gabo_Linear_construction.jpg" style="display: block; margin: 0 auto; height: 320px;  padding: 5px;">
+<figcaption>
+Naum Gabo’s “Linear Construction in Space No. 2” (1958), taken from
+https://www.guggenheim.org/artwork/1385.
+</figcaption>
+</figure>
+<h2 id="beyond-the-seven-elementary-catastrophes">Beyond the seven
+elementary catastrophes</h2>
+<p>Having completed the discussion of the seven elementary caustics, the
+reader may be tempted to continue reading into catastrophe theory by
+mentioning two interesting properties of higher catastrophes.</p>
+<p>Firstly, we have shown in detail how the unfoldings codimension-4
+singularities are derived. The very same methods can be applied to
+derive the canonical forms and unfoldings of the codimension-5
+singularities, which are well known in the literature (e.g. <span
+class="math inline"><em>x</em><sup>7</sup></span> is known as the
+<em>wigwam</em> catastrophe). It is obvious that the corank-1 cuspoids,
+i.e. the <span
+class="math inline"><em>x</em><sup><em>n</em></sup></span>
+singularities, form an infinite family, of which the universal
+unfoldings are evident. It is also intuitive that the corank-2 umbilics
+form an infinite family, even though the canonical forms and unfoldings
+are much less clear in this case. <a
+href="https://link.springer.com/article/10.1007/BF01077644">Arnol’d</a>
+has demonstrated that these infinite families, along with three
+“exceptional” higher-codimension catastrophes, can be classified using
+the Coxeter-Dynkin diagrams; that is, the catastrophes admit an <em>ADE
+classification</em>. This finally motivates the use of the symbols <span
+class="math inline"><em>A</em><sub><em>n</em></sub></span> for the
+cuspoids and <span
+class="math inline"><em>D</em><sub><em>n</em></sub></span> for the
+umbilics, which we had left uncommented above. I will write separate
+notes on Picard-Lefschetz theory and the ADE classification and of
+higher catastrophes soon.</p>
+<p>The second curious property of higher-codimension catastrophes can be
+introduced by considering a general 4-jet such that the 3-jet
+identically vanishes</p>
+<p><span
+class="math display"><em>j</em><sup>4</sup>(<em>x</em>, <em>y</em>) ∼ (<em>a</em><sub>1</sub><em>x</em> + <em>b</em><sub>1</sub><em>y</em>)(<em>a</em><sub>2</sub><em>x</em> + <em>b</em><sub>2</sub><em>y</em>)(<em>a</em><sub>3</sub><em>x</em> + <em>b</em><sub>3</sub><em>y</em>)(<em>a</em><sub>4</sub><em>x</em> + <em>b</em><sub>4</sub><em>y</em>)</span></p>
+<p>Assuming real and non-repeated roots of the quartic polynomial, the
+singularity is of codimension 8. One can now proceed as above to find a
+possible canonical form. But if one writes</p>
+<p><span
+class="math display"><em>j</em><sup>4</sup>(<em>x</em>, <em>y</em>) ∼ <em>x</em><em>y</em>(<em>a</em><em>x</em> + <em>b</em><em>y</em>)(<em>p</em><em>x</em> + <em>q</em><em>y</em>) ∼ <em>x</em><em>y</em>(<em>x</em> + <em>y</em>)(<em>s</em><em>x</em> + <em>t</em><em>y</em>) ∼ <em>x</em><em>y</em>(<em>x</em> + <em>y</em>)(<em>x</em> + <em>λ</em><em>y</em>) ,</span></p>
+<p>there remains a free parameter <span
+class="math inline"><em>λ</em></span> that cannot be absorbed by a
+suitable diffeomorphism. One therefore does not obtain a single
+canonical form, but a 1-parameter family of castrastrophes that cannot
+be transformed into each other through diffeomorphism. These <em>moduli
+spaces</em> are a generic property of higher catastrophes.</p>
+        <!-- content_insertion -->
+    </div>
+
+</body>
+
+</html>
