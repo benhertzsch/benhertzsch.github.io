@@ -1,74 +1,74 @@
 # Catastrophe Theory --<br> The Seven Elementary Catastrophes
 
-<p class="author-class">Benjamin Hertzsch</p>
+<p class="author">Benjamin Hertzsch</p>
 
 
-__*Disclaimer:*__ These notes were typed up as a first version for a PhD  seminar I gave in Edinburgh on the 27/02/2025. These notes likely contain numerous typos, are wordy or inaccurate in places, and several LaTeX equations are not properly displayed. I will update the notes and fix the template soon.
+__*Disclaimer:*__ These notes were typed up as a first version for a PhD  seminar I gave in Edinburgh on the 27/02/2025. These notes likely contain numerous typos, are wordy or inaccurate in places, and the there are issues with varying screen sizes. I will update the notes and fix the template soon.
 
 In these notes, I will derive Thom's *seven elementary catastrophes* ([Thom (1972)](https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&redir_esc=y)), the main elements of catastrophe theory in the four-dimensional universe. Key works on catastrophe theory are [Thom (1972)](https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&redir_esc=y), [Arnol'd (1972)](https://link.springer.com/article/10.1007/BF01077644) (amongst many of Arnol'd's mathematical works on catastrophe theory) as well as various articles by [Zeeman (1972-1977)](https://books.google.co.uk/books/about/Catastrophe_Theory.html?id=CxuYf2PP2hsC&redir_esc=y). An in-depth and mathematically rigorous survey of catastrophe theory can be found in [Arnold et al. (1985)](https://link.springer.com/book/10.1007/978-0-8176-8340-5). For applications of catastrophe theory, see also [Arnold (1984)](https://link.springer.com/book/10.1007/978-3-642-58124-3); for beautiful illustrations of the various caustics in optics, we refer to [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). In the following, I will closely follow [Saunders (1980)](https://www.cambridge.org/core/books/an-introduction-to-catastrophe-theory/D5ECA839997CD9C2A247C413E69CD2B8) to derive catastrophe theory in the language familiar to physicists.
 
 ## Fundamentals and terminology
 
-<p><span class="paragraph-class">Critical points and Morse's lemma</span>
-Consider a multivariate function $f(\bm{x})$ of some state variables $\bm{x}$. The function has a critical point at $\bm{x}_0$ if
+<p><span class="paragraph">Critical points and Morse's lemma</span>
+Consider a multivariate function $f(\mathbf{x})$ of some state variables $\mathbf{x}$. The function has a critical point at $\mathbf{x}_0$ if
 
 $$
-\nabla \bm{x} \lvert_{\bm{x}_0} = 0
+\nabla \mathbf{x} \lvert_{\mathbf{x}_0} = 0
 $$
 
-The critical point is *non-degenerate* if the Hessian $\mathcal{H}f(\bm{x}) = \partial_i \partial_j f(\bm{x})$ at the critical point is invertible, i.e. if
+The critical point is *non-degenerate* if the Hessian $\mathcal{H}f(\mathbf{x}) = \partial_i \partial_j f(\mathbf{x})$ at the critical point is invertible, i.e. if
 
 $$
-\det(\mathcal{H}f(\bm{x})) \lvert_{\bm{x}_0}  \neq 0
+\det(\mathcal{H}f(\mathbf{x})) \lvert_{\mathbf{x}_0}  \neq 0
 $$
 
-If $\det(\mathcal{H}f(\bm{x})) \lvert_{\bm{x}_0} = 0$, the critical point is *degenerate*. In the one-dimensional case, $f(x)$, it is customary to call the a critical point *$n$-fold degnerate* for $n$ derivatives higher than first-order vanishing at $x_0$.
+If $\det(\mathcal{H}f(\mathbf{x})) \lvert_{\mathbf{x}_0} = 0$, the critical point is *degenerate*. In the one-dimensional case, $f(x)$, it is customary to call the a critical point *$n$-fold degnerate* for $n$ derivatives higher than first-order vanishing at $x_0$.
 
-**Catastrophe theory is the general classification of degenerate points and thus extends Morse's classication of non-degenerate critical points**. In the following, critical points will always taken to be at the origin $\bm{x} = \bm{0}$.
+**Catastrophe theory is the general classification of degenerate points and thus extends Morse's classication of non-degenerate critical points**. In the following, critical points will always taken to be at the origin $\mathbf{x} = \mathbf{0}$.
 
 <figure>
-<img src="./notes/catastrophe_theory/figures/fig-min_max_Morse.jpeg" style="display: block; margin: 0 auto; height: 250px; padding: 5px;">
+<img src="./notes/catastrophe_theory/figures/fig-min_max_Morse.jpeg" style="display: block; margin: 0 auto; width: 80%; max-width: 800px; padding: 5px;">
 <figcaption>The functions $-x^2$ and $x^2$ have a maximum / minimum respectively as a non-degenerate critical point at the origin.</figcaption>
 </figure>
 
-For a function $f(x)$ of a single variable and a non-degenerate critical point at the origin, *Morse's classification* states that the critical point is a minimum if $f''(0) > 0$ and a maximum if $f''(0) < 0$. This classification extends to the multivariate case as follows: Consider a multivariate function $f(\bm{x})$ with $n$ state variables $\bm{x}$ and a non-degenerate critical point at the origin. *Morse's lemma* states that there exists a diffeomorphism $\psi$ which preservers the origin, $\psi(\bm{0}) = \bm{0}$, under which the function near the non-degenerate critical point may be written as quadratic form
+For a function $f(x)$ of a single variable and a non-degenerate critical point at the origin, *Morse's classification* states that the critical point is a minimum if $f''(0) > 0$ and a maximum if $f''(0) < 0$. This classification extends to the multivariate case as follows: Consider a multivariate function $f(\mathbf{x})$ with $n$ state variables $\mathbf{x}$ and a non-degenerate critical point at the origin. *Morse's lemma* states that there exists a diffeomorphism $\psi$ which preservers the origin, $\psi(\mathbf{0}) = \mathbf{0}$, under which the function near the non-degenerate critical point may be written in the quadratic form
 
 $$
-f(\psi(\bm{x})) = -x_1^2 - x_2^2 - \ldots - x_p^2+1 + x_{p+1}^2 + \ldots + x_{n}^2 \,,
+f(\psi(\mathbf{x})) = -x_1^2 - x_2^2 - \ldots - x_p^2+1 + x_{p+1}^2 + \ldots + x_{n}^2 \,,
 $$
 
-One calls $p$ the (Morse) index of the singularity at $\bm{x}={0}$, which counts the directions in which the function assumes a maximum. Written in this quadratic form, it is obvious that the Hessian $\mathcal{H}{f}$ is invertible at a non-degenerate critical point. 
+One calls $p$ the (Morse) index of the singularity at $\mathbf{x}={0}$, which counts the directions in which the function assumes a maximum. Written in this quadratic form, it is obvious that the Hessian $\mathcal{H}{f}$ is invertible at a non-degenerate critical point. 
 
 
-<p><span class="paragraph-class">Corank</span>
+<p><span class="paragraph">Corank</span>
 Degenerate critical points were defined above by the condition $\det \mathcal{H} f(\mathbf{x}) = 0$. Consider now a frame in which the Hessian is diagonal, so that diagonal second derivatives coincide with the eigenvalues, of the product of which is equal to the determinant. It is now a priori unclear how many of these eigenvalues vanish, corresponding to the orthogonal directions in which the Hessian is degenerate. The *splitting lemma* now states that to classify all the non-degenerate critical points, one only has to consider the *essential* variables, for which the vanishing of the second derivate cannot be removed by a suitable coordinate transformation. Their number is equal to the number of vanishing eigenvalues of $\mathcal{H} f(\mathbf{x})$. One refers to the number of essential variables as *corank* of the singularity.
 
 In the following, I will assume the number of state variables for a function always to be equal to the number of essential variables, and hence use the terms interchangeably.
 
 
-<p><span class="paragraph-class">Structural stability</span>
-*Structural stability* refers to the property of a function that the qualitative nature of the function does not change under small perturbations. Consider for example the polynomials in a single variable $x^n$ up to some order $n$. Structural stablility requires that the addition of any polynomial $\alpha x^m$ with small $\alpha$ and $m$ a positive integer and does not alter the critical nature of the function near the critical point (i.e. the origin). For $m>n$, this is trivially true; for $m<n$, the situation may change.
+<p><span class="paragraph">Structural stability</span>
+*Structural stability* refers to the property of a function that the qualitative nature of the function does not change under small perturbations. Consider for example the polynomials in a single variable $x^n$ up to some order $n$. Structural stability requires that the addition of any polynomial $\alpha x^m$ with small $\alpha$ and $m$ a positive integer and does not alter the critical nature of the function near the critical point (i.e. the origin). For $m>n$, this is trivially true; for $m<n$, the situation may change.
 
 <figure>
-<img src="./notes/catastrophe_theory/figures/fig-cubic_unfolding.jpeg" style="display: block; margin: 0 auto; height: 250px; padding: 5px;">
+<img src="./notes/catastrophe_theory/figures/fig-cubic_unfolding.jpeg" style="display: block; margin: 0 auto;  width: 90%; max-width: 900px; padding: 5px;">
 <figcaption>The function $x^3 - \alpha x$ with $\alpha = \{-0.15, 0.0, 0.15\}$. Varying $\alpha$ from negative to positive values unfolds the degenerate critical point at the origin to a pair of non-degenerate critical points (maximum and minimum).</figcaption>
 </figure>
 
 
-Consider for instance the function $f(x) = x^3$ which has a degenerate critical point at the origin. This is function not structurally stable, as the addition of the term $-\alpha x$ with $\alpha>0$ would change the function's qualitative nature by unfolding the critical point at the origin into a maximum and a minimum at $x = \{ \pm \sqrt{\frac{\alpha}{3}}\}$. However, the family of functions $f_{\bm{u}}(\bm{x}) = x^3 + u_2 x^2 + u_1 x^1 + u_0$ is structurally stable, as the addition of any term $x^n$ up to $n=3$ does not change the critical behaviour of the family of functions. The same argument applies to multivariate functions with several state variables $\bm{x}$, where the function family $f_{\bm{u}}(\bm{x})$ addition of any small perturbation in $\alpha h(\mathbf{x})$ with must be "recovered" in the function family.
+Consider for instance the function $f(x) = x^3$ which has a degenerate critical point at the origin. This is function not structurally stable, as the addition of the term $-\alpha x$ with $\alpha>0$ would change the function's qualitative nature by unfolding the critical point at the origin into a maximum and a minimum at $x = \{ \pm \sqrt{\frac{\alpha}{3}}\}$. However, the family of functions $f_{\mathbf{u}}(\mathbf{x}) = x^3 + u_2 x^2 + u_1 x^1 + u_0$ is structurally stable, as the addition of any term $x^n$ up to $n=3$ does not change the critical behaviour of the family of functions. The same argument applies to multivariate functions with several state variables $\mathbf{x}$, where the function family $f_{\mathbf{u}}(\mathbf{x})$ addition of any small perturbation in $\alpha h(\mathbf{x})$ with must be "recovered" in the function family.
 
-Throughout these notes, the subcript $\bm{u}$ will be generally omitted for simplicity, and "families of functions" will be simply referred to as "functions". It should be clear from the context that parameters may be involved.
+Throughout these notes, the subcript $\mathbf{u}$ will be generally omitted for simplicity, and "families of functions" will be simply referred to as "functions". It should be clear from the context that parameters may be involved.
 
 At this point, note that we have been discussing polynomials only. This is actually general, as we are interested in the neighborhood of a critical point, where a function may be expanded in a Taylor series. The results we derived are therefore to be understood as classifying the $k$-*jet* $j^k(x)$ (Taylor series truncated at order $k$) of a generic analytic function that can be locally expanded as a polynomial.
 
-<p><span class="paragraph-class">Unfoldings</span>
+<p><span class="paragraph">Unfoldings</span>
 The function families discussed above are also called *unfoldings* of the singularities. Consider again the bare singularity $x^n$, for which the unfolding
 
 $$
-f_{\bm{u}}(x) = x^n + u_{n-1} x^{n-1} + \ldots + u_1 x + u_0
+f_{\mathbf{u}}(x) = x^n + u_{n-1} x^{n-1} + \ldots + u_1 x + u_0
 $$
 
-provides a structurally stable family of functions. Similarly, for a singularity in several state variables $\bm{x}$, a possible unfolding is obtained by adding all monomials of lower order. For instance, for $x^3 y^2$, all terms $x^k y^l$ with $k <3 \in \mathbb{N}$, $l < 2 \in \mathbb{N}$ could appear in this function family.
+provides a structurally stable family of functions. Similarly, for a singularity in several state variables $\mathbf{x}$, a possible unfolding is obtained by adding all monomials of lower order. For instance, for $x^3 y^2$, all terms $x^k y^l$ with $k <3 \in \mathbb{N}$, $l < 2 \in \mathbb{N}$ could appear in this function family.
 
 
 An unfolding is said to be *versal* if it is structurally stable. Clearly, this is the case for the unfoldings proposed above. However, not all terms in these function families are actually necessary to ensure structural stability. For instance, for a singularity $x^n$, it is readily seen that the terms $u_{n-1} x^{n-1}$ and $u_0$ do not actually change qualitative behavior of the function, as they may simply be absorbed in a shift of the origin and do not change the critical point. For more than one state variable, it is not so obvious which terms would be relevant, but the same argument applies.
@@ -76,10 +76,10 @@ An unfolding is said to be *versal* if it is structurally stable. Clearly, this 
 An unfolding is said to be *universal* if it is structurally stable and has the least number of parameters. The term *unfolding* in the literature usually refers to universal unfolding of a caustic. In the univariate case, the singularity a $x^n$ is $n-2$-fold degenerate and takes $n-2$ unfolding parameters:
 
 $$
-f_{\bm{u}}(x) = x^n + u_{n-2} x^{n-2} + \ldots + u_1 x
+f_{\mathbf{u}}(x) = x^n + u_{n-2} x^{n-2} + \ldots + u_1 x
 $$
 
-For singularities with two state variables, a few universal unfoldings will be derived below. Throughout these notes, the essential (state) variables will always be denoted as $\bm{x}$, and the universal unfolding parameteres as $\bm{u}$.
+For singularities with two state variables, a few universal unfoldings will be derived below. Throughout these notes, the essential (state) variables will always be denoted as $\mathbf{x}$, and the universal unfolding parameteres as $\mathbf{u}$.
 
 Finally, consider again the singularity $x^3$, for which we can now write down the universal unfolding as 
 
@@ -90,13 +90,13 @@ $$
 It is now clear that the term "unfolding" is chosen because the linear term reveals that the degenerate critical point actually is two coincident non-degenerate critical points, which are unfolded by varying $u$. Generally, universal unfoldings unfold $n$-fold degenerate critical points into $n+1$ non-degenerate critical points.
 
 
-<p><span class="paragraph-class">Codimension</span>
+<p><span class="paragraph">Codimension</span>
 The unfolding parameters in physical applications of catastrophe theory represent a target space, which is typically the (up to) $4$ dimensions of our space-time. This means that stable geometric objects (rather than unstable transient events) in this target space can be defined by up to $4$ constraint equations. The number of constraint equations is typically called the $codimension$ of an object. 
 
 For the following list of seven elementary catastrophes, it suffices to define the codimension of a singularity as the number of parameters in the universal unfolding. This is because, as we have already seen for the univariate case $f(x)$, the number of unfolding parameters is equal to a singularity's degree of degeneracy. But saying that a critical point is $n$-fold degenerate is the same as saying that there $n$ constraint equations, which constrain $n$ higher derivatives to vanish.
 
 For the case of more than one essential variable, the same argument holds, and the codimension is again equal to the number of unfolding parameters. We will see below that finding the universal unfoldings is more tricky, but we can already make another important observation:
-Consider a singularity of corank $l$, with $l$ state variables (all of which are essential). The Hessian is symmetric, thus the vanishing of $\det \mathcal{H} f$ requires that all the $l(l+1)/2$ independent entries of the Hessian are zero. This means that there are $l(l+1)/2$ constraint equations, and the singularity is therefore of codimension at least $l(l+1)/2$. In words, a corank-$l$ singularity is stabilised by at least $l(l+1)$ unfolding parameters. Corank-3 singularities therefore take at least 6 unfolding parameters, and are not stable in the 4-dimensional universe;l similary for higher coranks.
+Consider a singularity of corank $l$, with $l$ state variables (all of which are essential). The Hessian is symmetric, thus the vanishing of $\det \mathcal{H} f$ requires that all the $l(l+1)/2$ independent entries of the Hessian are zero. This means that there are $l(l+1)/2$ constraint equations, and the singularity is therefore of codimension at least $l(l+1)/2$. In words, a corank-$l$ singularity is stabilised by at least $l(l+1)$ unfolding parameters. Corank-3 singularities therefore take at least 6 unfolding parameters, and are not stable in the 4-dimensional universe; similarly for higher corank.
 
 The corollary of the above is the following: 
 
@@ -116,32 +116,32 @@ These are called the **_fold_**, **_cusp_**, **_swallowtail_**, **_butterfly_** 
 
 For completeness, note that our simplistic definition of codimension ceases to be appropriate for catastrophes of higher-order catastrophes, where moduli spaces occur and the geometric and algebraic dimensions of the singularities become different.
 
-<p><span class="paragraph-class">Critical set, singular set and bifurcation set</span>
-The normal forms of the caustics live in the space $(\bm{x}, \bm{u})$ of essential variables $\bm{x}$ and unfolding parameters $\bm{u}$. In this space, there are a few objects of interest, which reveal the characteristic geometries of the various caustics in physical applications. The *equilibrium* or *critical set* $\mathcal{M}$ is defined as the set of all points for which the function's gradient vanishes,
+<p><span class="paragraph">Critical set, singular set and bifurcation set</span>
+The normal forms of the caustics live in the space $(\mathbf{x}, \mathbf{u})$ of essential variables $\mathbf{x}$ and unfolding parameters $\mathbf{u}$. In this space, there are a few objects of interest, which reveal the characteristic geometries of the various caustics in physical applications. The *equilibrium* or *critical set* $\mathcal{M}$ is defined as the set of all points for which the function's gradient vanishes,
 
 $$
-\mathcal{M} = \{ \mathbf{x}, \mathbf{u} : \nabla f_{\bm{u}}(\bm{x}) = 0\} \,
+\mathcal{M} = \{ \mathbf{x}, \mathbf{u} : \nabla f_{\mathbf{u}}(\mathbf{x}) = 0\} \,
 $$
 
 where the subscript $\mathbf{u}$ is again omitted. The *singular set* $\mathcal{S}$ is defined as the set of all points within the critical set for which the Hessian is non-invertable,
 
 $$
-\mathcal{S} = \{ \mathbf{x}, \mathbf{u}  \in \mathcal{M}: \det \mathcal{H} f_{\bm{u}}(\bm{x}) = 0\}
+\mathcal{S} = \{ \mathbf{x}, \mathbf{u}  \in \mathcal{M}: \det \mathcal{H} f_{\mathbf{u}}(\mathbf{x}) = 0\}
 $$
 
-Both $\mathcal{M}$ and $\mathcal{S}$ live in space of essential variables and unfolding parameters $(\bm{x},\bm{u})$. The *bifurcation set* $\mathcal{B}$ is defined as the projection of the singular set into the space of unfolding parameters
+Both $\mathcal{M}$ and $\mathcal{S}$ live in space of essential variables and unfolding parameters $(\mathbf{x},\mathbf{u})$. The *bifurcation set* $\mathcal{B}$ is defined as the projection of the singular set into the space of unfolding parameters
 
 $$
 \mathcal{B} = \{\mathbf{u}  \in \mathcal{S}\}
 $$
 
-$\mathcal{B}$ i readily obtained by eliminating the state variables $\bm{x}$ from $\mathcal{S}$ and $\mathcal{M}$.
+$\mathcal{B}$ i readily obtained by eliminating the state variables $\mathbf{x}$ from $\mathcal{S}$ and $\mathcal{M}$.
 
 
-<p><span class="paragraph-class">Physical manifestation of catastrophes</span>
+<p><span class="paragraph">Physical manifestation of catastrophes</span>
 Before deriving the classification of all caustics, it is instructive to attach a physical meaning to the objects defined above. The various catastrophes generally arise in situations that map from a space of initial configurations, *Lagrangian space*, to a space of final configurations, *Eulerian space*. The essential variables $\mathbf{x}$ here take the role of Lagrangian space coordinates, while the unfolding variables $\mathbf{u}$ correspond to the Eulerian space coordinates. The latter usually chart the (up to) $4$-dimensional space-time a physical experiment lives in.
 
-The singularity germs describe the Lagrangian space configuration, e.g. a lensing or gravitational potential $\Phi(\mathbf{x})$. The critical set $\mathcal{M}$ then corresponds the set of solutions to a governing equation (mapping equation, equation of motion, ...) from this initial configuration, i.e. the set of all possible paths from $\bm{x}$ to $\bm{u}$. This may be, for instance, the ensemble of light rays bent by a lensing potential, matter moving through a gravitational potential, or generic solutions to an initial value problem. The singular set $\mathcal{S}$ then corresponds to the boundaries of those regions in the Eulerian space $\bm{u}$ where several solutions coincide; that is, where several Lagrangian positions $\bm{x}$ are mapped to the same final configuration $\bm{u}$. The Lagrangian space is usually inaccessible, so that an experiment does not observe $\mathcal{M}$ and $\mathcal{S}$, but only the bifurcation set $\mathcal{B}$, which is the projection of $\mathcal{S}$ into the observed Eulerian space $\mathbf{u}$.
+The singularity germs describe the Lagrangian space configuration, e.g. a lensing or gravitational potential $\Phi(\mathbf{x})$. The critical set $\mathcal{M}$ then corresponds the set of solutions to a governing equation (mapping equation, equation of motion, ...) from this initial configuration, i.e. the set of all possible paths from $\mathbf{x}$ to $\mathbf{u}$. This may be, for instance, the ensemble of light rays bent by a lensing potential, matter moving through a gravitational potential, or generic solutions to an initial value problem. The singular set $\mathcal{S}$ then corresponds to the boundaries of those regions in the Eulerian space $\mathbf{u}$ where several solutions coincide; that is, where several Lagrangian positions $\mathbf{x}$ are mapped to the same final configuration $\mathbf{u}$. The Lagrangian space is usually inaccessible, so that an experiment does not observe $\mathcal{M}$ and $\mathcal{S}$, but only the bifurcation set $\mathcal{B}$, which is the projection of $\mathcal{S}$ into the observed Eulerian space $\mathbf{u}$.
 
 These concepts are is nicely illustrated with snapshot of a 2D mesh simulation for cosmological structure formation; for more details, see [my research page](./research.html). An observer would observe the Eulerian space in the right panel, i.e. the density of particles at the final positions at some time $t$. The observer does not a priori know whence these particles came from, as the Lagrangian space is not observable. The bifurcation set in Eulerian space is characterised by (infinite) density spikes. Our knowledge of the simulation allows us to draw the evolving mesh from Lagrangian space, and correctly identify the bifurcation set as the set of Eulerian points bounding the *multistream* regions where several incoming paths overlap.
 
@@ -155,9 +155,9 @@ Having discussed all the needed fundamental notions, I will discuss the seven el
 
 ### Corank-1 catastrophes: the cuspoids
 
-We will first discuss the the corank-1 catastrophes, which are known as the _cuspoids_, after the archetypical cusp catastrophe occuring in this family of singularities. 
+We will first discuss the the corank-1 catastrophes, which are known as the _cuspoids_, after the archetypical cusp catastrophe occurring in this family of singularities. 
 
-We have already seen above that the universal unfoldings are given in the form $f(x) = x^n + u_{n-2} x^{n-2} + \ldots + u_1 x$. It is thus straightforward to derive the equilibtrium, singular and bifurcation sets and discus their geometries.
+We have already seen above that the universal unfoldings are given in the form $f(x) = x^n + u_{n-2} x^{n-2} + \ldots + u_1 x$. It is thus straightforward to derive the equilibrium, singular and bifurcation sets and discus their geometries.
 
 #### A<sub>2</sub> fold catastrophe
 
@@ -214,26 +214,26 @@ $$
 The equilibrium set (yellow) and singular set (red) are shown in the left panel of the figure below.  The bifurcation set is the projection into the space of unfolding parameters $(u,v)$ shown on the right-hand side. 
 
 <figure>
-<img src="./notes/catastrophe_theory/figures/fig-A3_equilibrium_set.jpeg" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<img src="./notes/catastrophe_theory/figures/fig-A3_equilibrium_set.jpeg" style="display: block; margin: 0 auto; width: 90%; max-width: 800px; padding: 5px;">
 <figcaption>Equilibrium and singular set (left) and bifurcation set (right) of the $A_3$ catastrophe, revealing the characteristic cusp geometry.
 </figure>
 
 For clarity, the following figure also shows a rotating view of the equilbrium surface
 
 <figure>
-<img src="./notes/catastrophe_theory/figures/anim-A3_equilibrium_set.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
+<img src="./notes/catastrophe_theory/figures/anim-A3_equilibrium_set.gif" style="display: block; margin: 0 auto; width: 50%; max-width: 350px;padding: 5px;">
 <figcaption>Rotating view of the $A_3$ equilibrium set.
 </figure>
 
-The equilibrium and bifurcation set of the cusp catastrophe reveals a generic geometric property of all the caustics: The equilibrium surface is a smooth surface in the space $(\bm{x}, \bm{u})$, but the bifurcation set is not a smooth line in the unfolding space $(\bm{u})$. More formally, the equilibrium set is always a manifold, whereas the bifurcation set is not. In the case of the cusp, $\mathcal{B}$ is diffeomorphic, but not homeomorphic, to $\mathbb{R}^1$, meaning that $\mathcal{B}$ cannot be smoothly deformed to $\mathbb{R}^1$ without flattening the non-differentiable point at the origin.
+The equilibrium and bifurcation set of the cusp catastrophe reveals a generic geometric property of all the caustics: The equilibrium surface is a smooth surface in the space $(\mathbf{x}, \mathbf{u})$, but the bifurcation set is not a smooth line in the unfolding space $(\mathbf{u})$. More formally, the equilibrium set is always a manifold, whereas the bifurcation set is not. In the case of the cusp, $\mathcal{B}$ is diffeomorphic, but not homeomorphic, to $\mathbb{R}^1$, meaning that $\mathcal{B}$ cannot be smoothly deformed to $\mathbb{R}^1$ without flattening the non-differentiable point at the origin.
 
-As was mentioned above, the equilibrium set typically represent the physical solutions to a boundary problem, with $\bm{x}$ being the unobservable Lagrangian space, and $\bm{u}$ being the observed Eulerian space. For the cusp, we can see that there are regions of 3 overlapping solutions, which are bounded the by the cusp point and the fold lines emerging from it. These are known as *multi-image regions* in lensing applications, or *multistream regions* is cosmological structure formation and are nicely illustrated in the following physical applications.
+As was mentioned above, the equilibrium set typically represent the physical solutions to a boundary problem, with $\mathbf{x}$ being the unobservable Lagrangian space, and $\mathbf{u}$ being the observed Eulerian space. For the cusp, we can see that there are regions of 3 overlapping solutions, which are bounded the by the cusp point and the fold lines emerging from it. These are known as *multi-image regions* in lensing applications, or *multistream regions* is cosmological structure formation and are nicely illustrated in the following physical applications.
 
-<figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/cusp_reflection.jpeg" alt="Description 1" style="height: 220px; margin-right: 25px">
-<img src="./notes/catastrophe_theory/figures/mirror_plot.jpeg" alt="Description 2" style="height: 220px; margin-left: 25px">
-<img src="./notes/catastrophe_theory/figures/anim-A3_mesh.gif" alt="Description 2" style="height: 220px; margin-left: 25px">
+<figure  style="justify-content: center; width: 100%">
+<div>
+<img src="./notes/catastrophe_theory/figures/cusp_reflection.jpeg" alt="Description 1" style="width: 25%; margin-left: 8%; margin-right: 4%">
+<img src="./notes/catastrophe_theory/figures/mirror_plot.jpeg" alt="Description 2" style="width: 25%">
+<img src="./notes/catastrophe_theory/figures/anim-A3_mesh.gif" alt="Description 2" style="width: 25%; margin-left: 4%; margin-right: 8%">
 </div>
 <figcaption>Physical realisations of cusp catastrophes: left a reflection in a circular mirror (taken from https://i.sstatic.net/TMJnP.jpg), modelled in the middle panel with a circular mirror and a single reflection (dominant contribution to caustic) of the incident rays. The right panel shows a 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of Zel'dovich pancake, bounded by two fold lines connecting two cusp points.</figcaption>
 </figure>
@@ -358,7 +358,7 @@ The following figure shows the equilibrium set slice along with corresponding bi
 
 
 
-Again, more intution may be gained by smoothly varying the parameters $(t,u)$. This is done in the following animation, where $(t,u)$ are varied along a circle about the origin. Both the equilibrium set slice and the corresponding bifurcation set slice are shown in the middle and right panels. The animation nicely illustrates how the butterfly catastrophe unfolds into lower catastrophes, namely swallowtails, cups and connecting fold lines, at different points in the unfolding space.
+Again, more intuition may be gained by smoothly varying the parameters $(t,u)$. This is done in the following animation, where $(t,u)$ are varied along a circle about the origin. Both the equilibrium set slice and the corresponding bifurcation set slice are shown in the middle and right panels. The animation nicely illustrates how the butterfly catastrophe unfolds into lower catastrophes, namely swallowtails, cups and connecting fold lines, at different points in the unfolding space.
 
 <figure>
 <img src="./notes/catastrophe_theory/figures/anim-A5_equil_bif_set_variation.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
@@ -389,7 +389,7 @@ $$
 
 The first transformation used was $(x \mapsto ax + by, y \mapsto bx -ay)$, and the second diffeomorphism was found by writing $(x+y)^3 + (x-y)^3 = 2x^3 + 6xy^2$.
 
-The form  $\eta(x,y) = x^3 + x y^2$ is the one used by [Arnol'd (1972)](https://link.springer.com/article/10.1007/BF01077644), and we will see below that it is parallel to the canonical form of elliptic umbilic. For physical applications, the form $\eta(x,y) = x^3 + y^3$ is generally found to be more useful, and we therefore take the canonical form of the form of the $D_4^+$ singularity to be
+The form $\eta(x,y) = x^3 + x y^2$ is the one used by [Arnol'd (1972)](https://link.springer.com/article/10.1007/BF01077644), and we will see below that it is parallel to the canonical form of elliptic umbilic. For physical applications, the form $\eta(x,y) = x^3 + y^3$ is generally found to be more useful, and we therefore take the canonical form of the form of the $D_4^+$ singularity to be
 
 $$
 \boxed{D_4^+: \quad \eta(x,y) = x^3 + y^3}
@@ -495,6 +495,8 @@ and the nomenclature $D_4^{\pm}$ in Arnold's form $x^3 \pm x y^2$ is evident.
 
 We now again find the universal unfolding Siersma's trick. The relevant derivatives are $\partial_x \eta\sim x^2 - y^2$ and $\partial_y \eta \sim x y$. While the latter has an obvious place in the diagram, the former does not. One can, however, use these terms to write $x^3 = x(x^2 - y^2) + y(yx)$ and similary for $y^3$, so that both $x^3$ and $y^3$ may be eliminated.
 
+
+
 <figure>
 <img src="./notes/catastrophe_theory/figures/fig-triangle_D4m.jpg" style="display: block; margin: 0 auto; height: 180px;  padding: 5px;">
 <figcaption>Siersma's triangle for the $D_4^-$ singularity.</figcaption>
@@ -529,9 +531,10 @@ which is a two-dimensional surface the three-dimensional unfolding space $(u, v,
 <figure>
 <img src="./notes/catastrophe_theory/figures/fig-D4ell_bifurcation_set.jpeg" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
 <figcaption>Bifurcation set $\mathcal{B}_{D_4^-}$ of the umbilic catastrophe, and slice for $u=-0.5$.</figcaption>
-<figure>
+</figure>
 
 Clearly visible is the characteristic triangular geometry, with the elliptic umbilic point unfolding into three cusp points connected by fold lines. As for the hyperbolic umbilic, it is again instructive to plot a slice of the equilibrium set $\mathcal{M}_{D_4^-}$ for fixed $w$, this time by projecting into $(x,u,v)$. The following animation beautifully illustrates how the equilibrium is a smooth surface, with the triangular structure arising from the projection of the singular set along the line of sight.
+
 
 <figure>
 <img src="./notes/catastrophe_theory/figures/anim-D4m_equil_bif_set.gif" style="display: block; margin: 0 auto; height: 300px; padding: 5px;">
@@ -539,6 +542,7 @@ Clearly visible is the characteristic triangular geometry, with the elliptic umb
 </figure>
 
 The characteristic triangular geometry of the elliptic umbilic caustic is readily observed in physical applications.
+
 
 <figure>
 <div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
@@ -548,6 +552,7 @@ The characteristic triangular geometry of the elliptic umbilic caustic is readil
 </div>
 <figcaption>Left and umbilic: elliptic umbilics in optical experiments, both taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). In the middle panel, the wavelength is comparable to the length scale of the caustic, thus resulting in a clear wave interference pattern pattern. Right: Cosmological 2D mesh simulation (Zel'dovich approximation) of an elliptic umbilic cluster.</figcaption>
 </figure>
+
 
 #### D<sub>5</sub> parabolic umbilic
 
@@ -602,7 +607,7 @@ $$
 \mathcal{B}_{D_5} =  \{ (t, u, v, w): 1889568 u^5 - 524880 u^4 w^2 - 7558272 u^3 v w^2 + 58320 u^3 w^4 + 1259712 u^2 v w^4 + 839808 t u^2 w^5 - 3240 u^2 w^6 - 69984 u v w^6 - 93312 t u w^7 + 90 u w^8 + 1296 v w^8 + 2592 t w^9 - w^10 + 5184 w^11 = 0 \}
 $$
 
-The geometry of the parabolic umbilic is arguably the most complicated of all the objects discussed in these notes. Note that the equilibrium set  $\mathcal{M}_{D_5}$ is 4-dimensional hypersurface in the 6-dimensional $(\bm{x}, \bm{u})$ and the bifurcation set $\mathcal{B}_{D_5}$ is a 3-dimensional volume in the space of unfolding parameters. Intuition may be gained by plotting slices of the bifurcation set for varying $(t,u)$, as in the following figure
+The geometry of the parabolic umbilic is arguably the most complicated of all the objects discussed in these notes. Note that the equilibrium set  $\mathcal{M}_{D_5}$ is 4-dimensional hypersurface in the 6-dimensional $(\mathbf{x}, \mathbf{u})$ and the bifurcation set $\mathcal{B}_{D_5}$ is a 3-dimensional volume in the space of unfolding parameters. Intuition may be gained by plotting slices of the bifurcation set for varying $(t,u)$, as in the following figure
 
 <figure>
 <img src="./notes/catastrophe_theory/figures/fig-D5_bifurcation_sets.jpg" style="display: block; margin: 0 auto; height: auto; width: 100%; padding: 5px;">
@@ -730,4 +735,4 @@ $$
 j^4(x,y) \sim x y(a x + b y)(p x + q y) \sim x y(x + y)(s x + t y) \sim x y(x + y)(x + \lambda y) \,,
 $$
 
-there remains a free parameter $\lambda$ that cannot be absorbed by a suitable diffeomorphism. One therefore does not obtain a single canonical form, but a 1-parameter family of castrastrophes that cannot be transformed into each other through diffeomorphism. These *moduli spaces* are a generic property of higher catastrophes.
+there remains a free parameter $\lambda$ that cannot be absorbed by a suitable diffeomorphism. One therefore does not obtain a single canonical form, but a 1-parameter family of castrastrophes that cannot be transformed into each other through diffeomorphisms. These *moduli spaces* are a generic property of higher catastrophes.

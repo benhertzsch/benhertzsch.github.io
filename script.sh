@@ -3,8 +3,11 @@ pandoc -o contents/research.html contents/research.md
 pandoc -o contents/publications.html contents/publications.md
 pandoc -o contents/notes.html contents/notes.md
 
-#pandoc --standalone --mathjax -f markdown -t html notes/catastrophe_theory/catastrophe_theory.md -o notes/catastrophe_theory/catastrophe_theory.html
-pandoc notes/catastrophe_theory/catastrophe_theory.md -o notes/catastrophe_theory/catastrophe_theory.html
+#pandoc --mathjax -f markdown -t html5 notes/catastrophe_theory/catastrophe_theory.md -o notes/catastrophe_theory/catastrophe_theory.html
+pandoc notes/catastrophe_theory/catastrophe_theory.md -s --mathjax -t html5 -o notes/catastrophe_theory/catastrophe_theory.html
+
+#pandoc notes/catastrophe_theory/catastrophe_theory.md --css css/style_notes.css -s --mathjax -t html5 -o catastrophe_theory.html
+
 
 
 python script.py
