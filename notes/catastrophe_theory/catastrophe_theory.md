@@ -229,11 +229,11 @@ The equilibrium and bifurcation set of the cusp catastrophe reveals a generic ge
 
 As was mentioned above, the equilibrium set typically represent the physical solutions to a boundary problem, with $\mathbf{x}$ being the unobservable Lagrangian space, and $\mathbf{u}$ being the observed Eulerian space. For the cusp, we can see that there are regions of 3 overlapping solutions, which are bounded the by the cusp point and the fold lines emerging from it. These are known as *multi-image regions* in lensing applications, or *multistream regions* is cosmological structure formation and are nicely illustrated in the following physical applications.
 
-<figure  style="justify-content: center; width: 100%">
+<figure style="justify-content: center; width: 100%">
 <div>
-<img src="./notes/catastrophe_theory/figures/cusp_reflection.jpeg" alt="Description 1" style="width: 25%; margin-left: 8%; margin-right: 4%">
-<img src="./notes/catastrophe_theory/figures/mirror_plot.jpeg" alt="Description 2" style="width: 25%">
-<img src="./notes/catastrophe_theory/figures/anim-A3_mesh.gif" alt="Description 2" style="width: 25%; margin-left: 4%; margin-right: 8%">
+<img src="./notes/catastrophe_theory/figures/cusp_reflection.jpeg" alt="Description 1" style="width: 25%; min-width: 0px; margin-left: 8%; margin-right: 4%">
+<img src="./notes/catastrophe_theory/figures/mirror_plot.jpeg" alt="Description 2" style="width: 25%;min-width: 0px;">
+<img src="./notes/catastrophe_theory/figures/anim-A3_mesh.gif" alt="Description 2" style="width: 25%; min-width: 0px; margin-left: 4%; margin-right: 8%">
 </div>
 <figcaption>Physical realisations of cusp catastrophes: left a reflection in a circular mirror (taken from https://i.sstatic.net/TMJnP.jpg), modelled in the middle panel with a circular mirror and a single reflection (dominant contribution to caustic) of the incident rays. The right panel shows a 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of Zel'dovich pancake, bounded by two fold lines connecting two cusp points.</figcaption>
 </figure>
@@ -574,7 +574,7 @@ $$
 \boxed{D_5: \quad \eta(x,y) = y^4 + x^2 y }
 $$
 
-Note that a further degeneracy in the 3-jet or the requirement of a higher term (y^4) vanishing in the 4-jet would raise the codimension to 4. The $D_5$ singularity is therefore the last in the list of the catastrophes up to codimension 4.
+Note that a further degeneracy in the 3-jet or the requirement of a higher term (e.g. $y^4$) vanishing in the 4-jet would raise the codimension to 4. The $D_5$ singularity is therefore the last in the list of the catastrophes up to codimension 4.
 
 The universal unfolding is again found by considering $\partial_x \eta \sim x y$ and $\partial_y \eta \sim x^2 + y^3$, where the former has a place in the diagram. One can draw further shadows from $x^3 = -y^2(xy) + x(x^2 + y^3)$ and $y^4 = y (x^2 + y^3) - x(xy)$.
 
