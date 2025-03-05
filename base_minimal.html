@@ -40,6 +40,124 @@
         
         <link rel="stylesheet" type="text/css" href="css/style_notes.css">
     </meta>
+
+    <script>
+        window.onload = function() {
+            document.querySelectorAll("insert_two_images").forEach(insertElement => {
+                let images = [
+                    insertElement.getAttribute("image1"),
+                    insertElement.getAttribute("image2")
+                ];
+                let width  = parseFloat(insertElement.getAttribute("width")) || 100; // Default 100% screen width
+                let margin = parseFloat(insertElement.getAttribute("margin")) || 5;   // Default 5% margin
+                let ratios = [];
+                let imsLoaded = 0;
+        
+                images.forEach((src, index) => {
+                    let img = new Image();
+                    img.src = src.trim();
+
+                    img.onload = function() {
+                        let ratio = img.naturalWidth / img.naturalHeight;
+                        ratios[index] = ratio;
+                        imsLoaded++;
+
+                        if (imsLoaded === images.length) {
+                            let baseRatio = ratios[0];
+                            let normRatios = ratios.map(r => r / baseRatio);
+                            let total = normRatios.reduce((sum, r) => sum + r, 0);
+                            let s = (width - 2) - margin;
+                            let unit = s / total;
+
+                            insertTwoImages(images, normRatios, unit, width, margin, insertElement);
+                        }
+                    };
+                });
+            });
+
+            document.querySelectorAll("insert_three_images").forEach(insertElement => {
+                let images = [
+                    insertElement.getAttribute("image1"),
+                    insertElement.getAttribute("image2"),
+                    insertElement.getAttribute("image3")
+                ];
+                let width  = parseFloat(insertElement.getAttribute("width")) || 100; // Default 100% screen width
+                let margin = parseFloat(insertElement.getAttribute("margin")) || 5;   // Default 5% margin
+                let ratios = [];
+                let imsLoaded = 0;
+        
+                images.forEach((src, index) => {
+                    let img = new Image();
+                    img.src = src.trim();
+
+                    img.onload = function() {
+                        let ratio = img.naturalWidth / img.naturalHeight;
+                        ratios[index] = ratio;
+                        imsLoaded++;
+
+                        if (imsLoaded === images.length) {
+                            let baseRatio = ratios[0];
+                            let normRatios = ratios.map(r => r / baseRatio);
+                            let total = normRatios.reduce((sum, r) => sum + r, 0);
+                            let s = (width - 2) - 2 * margin;
+                            let unit = s / total;
+
+                            insertThreeImages(images, normRatios, unit, width, margin, insertElement);
+                        }
+                    };
+                });
+            });
+        };
+        
+        function insertThreeImages(images, normRatios, unit, width, margin, insertElement) {
+            let figure = insertElement.parentElement;
+        
+            images.forEach((src, index) => {
+                let imgElement = document.createElement("img");
+                imgElement.src = src;
+                imgElement.style.width = `${normRatios[index] * unit}%`;
+                
+                // margins for keft and right images
+                if (index === 0) {
+                    imgElement.style.marginLeft = `${(100 - width) / 2}%`;
+                    imgElement.style.marginRight = `${margin}%`;
+                } else if (index === images.length - 1) {
+                    imgElement.style.marginLeft = `${margin}%`;
+                    imgElement.style.marginRight = `${(100 - width) / 2}%`;
+                } else {
+                    imgElement.style.marginLeft = "0";
+                    imgElement.style.marginRight = "0";
+                }
+                figure.insertBefore(imgElement, insertElement);
+            });
+
+            insertElement.remove(); // Remove the custom tag
+        }
+
+        
+        function insertTwoImages(images, normRatios, unit, width, margin, insertElement) {
+            let figure = insertElement.parentElement;
+        
+            images.forEach((src, index) => {
+                let imgElement = document.createElement("img");
+                imgElement.src = src;
+                imgElement.style.width = `${normRatios[index] * unit}%`;
+                
+                // margins for keft and right images
+                if (index === 0) {
+                    imgElement.style.marginLeft = `${(100 - width) / 2}%`;
+                    imgElement.style.marginRight = `${margin}%`;
+                } else {
+                    imgElement.style.marginLeft = "0";
+                    imgElement.style.marginRight = `${(100 - width) / 2}%`;
+                }
+                figure.insertBefore(imgElement, insertElement);
+            });
+
+            insertElement.remove(); // Remove the custom tag
+        }
+        </script>
+   
 </head>
 
 <body>

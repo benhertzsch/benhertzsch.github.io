@@ -64,8 +64,9 @@ p {
 }
 
 img {
-  max-width: 100%;
+  min-width: 0 !important;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   color: #111;
@@ -335,9 +336,9 @@ table#FIG td {
     page-break-inside: avoid;
   }
 
-  img {
+  /*img {
     max-width: 100% !important;
-  }
+  }*/
 
   @page :left {
     margin: 15mm 20mm 15mm 10mm;

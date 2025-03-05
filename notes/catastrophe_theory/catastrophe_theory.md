@@ -2,7 +2,6 @@
 
 <p class="author">Benjamin Hertzsch</p>
 
-
 __*Disclaimer:*__ These notes were typed up as a first version for a PhD  seminar I gave in Edinburgh on the 27/02/2025. These notes likely contain numerous typos, are wordy or inaccurate in places, and the there are issues with varying screen sizes. I will update the notes and fix the template soon.
 
 In these notes, I will derive Thom's *seven elementary catastrophes* ([Thom (1972)](https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&redir_esc=y)), the main elements of catastrophe theory in the four-dimensional universe. Key works on catastrophe theory are [Thom (1972)](https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&redir_esc=y), [Arnol'd (1972)](https://link.springer.com/article/10.1007/BF01077644) (amongst many of Arnol'd's mathematical works on catastrophe theory) as well as various articles by [Zeeman (1972-1977)](https://books.google.co.uk/books/about/Catastrophe_Theory.html?id=CxuYf2PP2hsC&redir_esc=y). An in-depth and mathematically rigorous survey of catastrophe theory can be found in [Arnold et al. (1985)](https://link.springer.com/book/10.1007/978-0-8176-8340-5). For applications of catastrophe theory, see also [Arnold (1984)](https://link.springer.com/book/10.1007/978-3-642-58124-3); for beautiful illustrations of the various caustics in optics, we refer to [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). In the following, I will closely follow [Saunders (1980)](https://www.cambridge.org/core/books/an-introduction-to-catastrophe-theory/D5ECA839997CD9C2A247C413E69CD2B8) to derive catastrophe theory in the language familiar to physicists.
@@ -229,15 +228,17 @@ The equilibrium and bifurcation set of the cusp catastrophe reveals a generic ge
 
 As was mentioned above, the equilibrium set typically represent the physical solutions to a boundary problem, with $\mathbf{x}$ being the unobservable Lagrangian space, and $\mathbf{u}$ being the observed Eulerian space. For the cusp, we can see that there are regions of 3 overlapping solutions, which are bounded the by the cusp point and the fold lines emerging from it. These are known as *multi-image regions* in lensing applications, or *multistream regions* is cosmological structure formation and are nicely illustrated in the following physical applications.
 
-<figure style="justify-content: center; width: 100%">
-<div>
-<img src="./notes/catastrophe_theory/figures/cusp_reflection.jpeg" alt="Description 1" style="width: 25%; min-width: 0px; margin-left: 8%; margin-right: 4%">
-<img src="./notes/catastrophe_theory/figures/mirror_plot.jpeg" alt="Description 2" style="width: 25%;min-width: 0px;">
-<img src="./notes/catastrophe_theory/figures/anim-A3_mesh.gif" alt="Description 2" style="width: 25%; min-width: 0px; margin-left: 4%; margin-right: 8%">
-</div>
-<figcaption>Physical realisations of cusp catastrophes: left a reflection in a circular mirror (taken from https://i.sstatic.net/TMJnP.jpg), modelled in the middle panel with a circular mirror and a single reflection (dominant contribution to caustic) of the incident rays. The right panel shows a 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of Zel'dovich pancake, bounded by two fold lines connecting two cusp points.</figcaption>
+<figure>
+  <div style="margin: 10px">
+  <insert_three_images
+  image1="./notes/catastrophe_theory/figures/cusp_reflection.jpeg"
+  image2="./notes/catastrophe_theory/figures/mirror_plot.jpeg"
+  image3="./notes/catastrophe_theory/figures/anim-A3_mesh.gif"
+  width="90"
+  margin="3"></insert_three_images>
+  </div>
+  <figcaption>Physical realisations of cusp catastrophes: left a reflection in a circular mirror (taken from https://i.sstatic.net/TMJnP.jpg), modelled in the middle panel with a circular mirror and a single reflection (dominant contribution to caustic) of the incident rays. The right panel shows a 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of Zel'dovich pancake, bounded by two fold lines connecting two cusp points.</figcaption>
 </figure>
-
 
 
 #### A<sub>4</sub> swallowtail catastrophe
@@ -274,42 +275,53 @@ The equilibrium set $\mathcal{M}_{A_4}$ is now a $3$-dimensional volume in the $
 As in the cusp catastrophe, the equilibrium surface (i.e. the slice for fixed $u$) folds over itself, so that the projection into the $(v, w)$-plane yields a multi-image regions with overlapping pieces of the equilibrium surface. The swallowtail caustic unfolds by forming a pocket in the equilibrium surface, which is bounded by two cusp points and three fold lines. This becomes clearer in the animation below, which visualises the equilibrium set for fixed $u$. The bifurcation set $\mathcal{B}_{A_4}$ is a two-dimensional surface in the $3$-dimensional unfolding space $(u,v,w)$, and can be readily visualised.
 
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/anim-A4_equilibrium_set.gif" alt="Description 1" style="height: 300px; margin-right: 25px">
-<img src="./notes/catastrophe_theory/figures/fig-A4_bifurcation_set.jpeg" alt="Description 2" style="height: 300px; margin-left: 25px">
-</div>
-<figcaption>Left panel: Rotating view of the equilibrium set $\mathcal{M}_{A_4}$ for $u=-1.5$. Right panel: The bifurcation set $\mathcal{B}_{A_4}$ of the $A_4$ catastrophe.</figcaption>
+  <div style="margin: 5px">
+  <insert_two_images
+  image1="./notes/catastrophe_theory/figures/anim-A4_equilibrium_set.gif"
+  image2="./notes/catastrophe_theory/figures/fig-A4_bifurcation_set.jpeg"
+  width="90"
+  margin="2"
+  ></insert_two_images>
+  </div>
+  <figcaption>Left panel: Rotating view of the equilibrium set $\mathcal{M}_{A_4}$ for $u=-1.5$. Right panel: The bifurcation set $\mathcal{B}_{A_4}$ of the $A_4$ catastrophe.</figcaption>
 </figure>
+
+
 
 In physical applications, the unfolding parameters $(v,w)$ may correspond to the spatial coordinates of a two-dimensional target space, while $u$ corresponds to time coordinate or other control parameter that controls the "strength" or "growth" of the swallowtail caustic. An observer would therefore typically see "growing" slices of $\mathcal{B}_{A_4}$ for varying $u$. This becomes apparent when continuously varying $u$ and plotting the equilibrium set slices along with the corresponding bifurcation set slices:
 
 <figure>
 <img src="./notes/catastrophe_theory/figures/anim-A4_equil_bif_set.gif" style="display: block; margin: 0 auto; height: 300px; width: auto; padding: 5px;">
-<figcaption>Animation of the $u$-slice of the $A_4$ equilibrium (and corresponding singular) set for varying values of $u$.</figcaption>
+<figcaption>Animation of the $A_4$ equilibrium set ($u$-slice) and corresponding singular set for varying values of $u$.</figcaption>
 </figure>
 
 This is illustrated in the following the figures, where the correspondence with the animation above becomes apparent.
 
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/fig-A4_Berry.jpg" alt="Description 1" style="height: 250px; padding: 20px">
-<img src="./notes/catastrophe_theory/figures/swallowtail_optics.jpg" alt="Description 1" style="height: 250px; padding: 20px">
-<img src="./notes/catastrophe_theory/figures/anim-A4_mesh.gif" alt="Description 1" style="height: 250px; padding: 20px">
-</div>
-<figcaption>Left: Swallowtail caustic in an optics experiment, taken from  [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). Middle panel: another optical swallowtail catastrophe, taken from https://www.researchgate.net/figure/Two-simulations-of-optical-diffraction-patterns-near-i-a-swallowtail-ii-a_fig1_365445500. Right panel: 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of a swallowtail cluster.</figcaption>
+  <div style="margin: 10px">
+  <insert_three_images
+  image1="./notes/catastrophe_theory/figures/fig-A4_Berry.jpg"
+  image2="./notes/catastrophe_theory/figures/swallowtail_optics.jpg"
+  image3="./notes/catastrophe_theory/figures/anim-A4_mesh.gif"
+  width="95"
+  margin="2"></insert_three_images>
+  </div>
+  <figcaption>Left: Swallowtail caustic in an optics experiment, taken from  [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). Middle panel: another optical swallowtail catastrophe, taken from https://www.researchgate.net/figure/Two-simulations-of-optical-diffraction-patterns-near-i-a-swallowtail-ii-a_fig1_365445500. Right panel: 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of a swallowtail cluster.</figcaption>
 </figure>
-
 
 The swallowtail catastrophe in particular has attracted attention not only from scientists, but also in the fine arts. And example is Salvador Dalí's last painting, "The swallow's tail" (1983), which Dalí created in honour of the aesthetics of Thom's theory of catastrophes and their morphogenesis. More recently, engineer and author Allan McRobie has interpreted catastrophe theory as the theory of "beautifully curved" surfaces, which appear ubiquitously in the organic world, and are found to appeal more to the innate human understanding of beauty than the simple shapes of solid geometry possibly could. An example of this is shown in the right panel of the figure below, where a woman's curved torso is aesthetically forming the equilibrium surface of the swallowtail catastrophe.
 
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/Dali_swallowtail.jpg" alt="Description 1" style="height: 250px; padding: 20px">
-<img src="./notes/catastrophe_theory/figures/seduction_curves.jpg" alt="Description 1" style="height: 250px; padding: 20px">
-</div>
-<figcaption>Left: Salvador Dali's "La queue d'aronde" ("The swallow's tail") (1983), an artistic illustration of Thom's catastrophe theory. Taken from https://www.wikiart.org/en/salvador-dali/the-swallow-s-tail. Right: Cover photo of Allan McRobie's "The seduction of curves" (2017), a woman's torso forming the swallowtail equilibrium surface. Taken from https://www.eng.cam.ac.uk/news/seduction-curves-lines-beauty-connect-mathematics-art-and-nude-allan-mcrobie.</figcaption>
+  <div style="margin: 5px">
+  <insert_two_images
+  image1="./notes/catastrophe_theory/figures/Dali_swallowtail.jpg"
+  image2="./notes/catastrophe_theory/figures/seduction_curves.jpg"
+  width="90"
+  margin="2"
+  ></insert_two_images>
+  </div>
+  <figcaption>Left: Salvador Dali's "La queue d'aronde" ("The swallow's tail") (1983), an artistic illustration of Thom's catastrophe theory. Taken from https://www.wikiart.org/en/salvador-dali/the-swallow-s-tail. Right: Cover photo of Allan McRobie's "The seduction of curves" (2017), a woman's torso forming the swallowtail equilibrium surface. Taken from https://www.eng.cam.ac.uk/news/seduction-curves-lines-beauty-connect-mathematics-art-and-nude-allan-mcrobie.</figcaption>
 </figure>
-
 
 
 #### A<sub>5</sub> butterfly catastrophe
@@ -347,15 +359,17 @@ The following figure shows the equilibrium set slice along with corresponding bi
 <figcaption>Slice of the $A_5$ equilibrium set for $(t,u)=(-1,0)$ seen from different angles.</figcaption>
 </figure>
 
-
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/anim-A5_equil_bif_set.gif" alt="Description 1" style="height: 300px; margin-right: 30px">
-<img src="./notes/catastrophe_theory/figures/fig-A5_bif_set.jpeg" alt="Description 2" style="height: 300px; margin-left: 30px">
-</div>
-<figcaption>Left panel: Rotating view of the $A_5$ equilibrium set slice for $(t,u)=(-1,0)$. Right panel: Corresponding slice of the $A_5$ bifurcation set.</figcaption>
+  <div style="margin: 5px">
+  <insert_two_images
+  image1="./notes/catastrophe_theory/figures/anim-A5_equil_bif_set.gif"
+  image2="./notes/catastrophe_theory/figures/fig-A5_bif_set.jpeg"
+  width="90"
+  margin="2"
+  ></insert_two_images>
+  </div>
+  <figcaption>Left panel: Rotating view of the $A_5$ equilibrium set slice for $(t,u)=(-1,0)$. Right panel: Corresponding slice of the $A_5$ bifurcation set.</figcaption>
 </figure>
-
 
 
 Again, more intuition may be gained by smoothly varying the parameters $(t,u)$. This is done in the following animation, where $(t,u)$ are varied along a circle about the origin. Both the equilibrium set slice and the corresponding bifurcation set slice are shown in the middle and right panels. The animation nicely illustrates how the butterfly catastrophe unfolds into lower catastrophes, namely swallowtails, cups and connecting fold lines, at different points in the unfolding space.
@@ -464,13 +478,16 @@ While we have now shown the characteristic geometry of the hyperbolic umbilic ca
 The rotating view of the equilibrium surface beautifully illustrates the argument brought forward above, namely that the equilibrium and singular sets of the catastrophes are smooth manifolds, with the singular structure in the bifurcation sets miraculously arising from projections "along the line of sight".
 
 
-
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/fig-D4p_Berry.jpg" alt="Description 1" style="height: 250px; margin-right: 25px">
-<img src="./notes/catastrophe_theory/figures/anim-D4p_mesh.gif" alt="Description 1" style="height: 250px;  margin-left: 25px">
-</div>
-<figcaption>Left: hyperbolic umbilic caustic in an optical experiment, taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). Right: Cosmological 2D mesh simulation (Zel'dovich approximation) of a hyperbolic umbilic cluster.</figcaption>
+  <div style="margin: 5px">
+  <insert_two_images
+  image1="./notes/catastrophe_theory/figures/fig-D4p_Berry.jpg"
+  image2="./notes/catastrophe_theory/figures/anim-D4p_mesh.gif"
+  width="90"
+  margin="2"
+  ></insert_two_images>
+  </div>
+  <figcaption>Left: hyperbolic umbilic caustic in an optical experiment, taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). Right: Cosmological 2D mesh simulation (Zel'dovich approximation) of a hyperbolic umbilic cluster.</figcaption>
 </figure>
 
 
@@ -505,7 +522,7 @@ We now again find the universal unfolding Siersma's trick. The relevant derivati
 There are 4 unshaded terms, $x, y, x^2$ and $y^2$ left. But the $D_4^-$ singularity again has codimension 3, so one further variable must be eliminated. If one introduces a symmetric unfolding term $x^2 + y^2$, one can easily eliminate both $x^2$ and $y^2$ by writing $2 x^2 = (x^2+y^2) + (x^2-y^2)$ and similarly for $y^2$. Note that one could equivalently use $x^2$ or $y^2$ to eliminate the other respectively, but the symmetric form is generally found more useful. We therefore write the universal unfolding as
 
 $$
-\boxed{f_{D_4^-} = 1/3 x^3 - x y^2  + w (x^2 + y^2) - u x + v y}
+\boxed{f_{D_4^-} = \frac{1}{3} x^3 - x y^2  + w (x^2 + y^2) - u x + v y}
 $$
 
 The equilibrium set $\mathcal{M}_{D_4^-}$ of the elliptic umbilic caustic is given by the two simultaneous equations
@@ -545,12 +562,15 @@ The characteristic triangular geometry of the elliptic umbilic caustic is readil
 
 
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/fig-D4m_Berry.jpg" alt="Description 1" style="height: 220px; margin-right: 20px">
-<img src="./notes/catastrophe_theory/figures/fig-D4m_Berry_2.jpg" alt="Description 1" style="height: 220px; margin-left: 20px;  margin-right: 20px">
-<img src="./notes/catastrophe_theory/figures/anim-D4m_mesh.gif" alt="Description 1" style="height: 220px; margin-left: 20px">
-</div>
-<figcaption>Left and umbilic: elliptic umbilics in optical experiments, both taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). In the middle panel, the wavelength is comparable to the length scale of the caustic, thus resulting in a clear wave interference pattern pattern. Right: Cosmological 2D mesh simulation (Zel'dovich approximation) of an elliptic umbilic cluster.</figcaption>
+  <div style="margin: 10px">
+  <insert_three_images
+  image1="./notes/catastrophe_theory/figures/fig-D4m_Berry.jpg"
+  image2="./notes/catastrophe_theory/figures/fig-D4m_Berry_2.jpg"
+  image3="./notes/catastrophe_theory/figures/anim-D4m_mesh.gif"
+  width="95"
+  margin="2"></insert_three_images>
+  </div>
+  <figcaption>Left and umbilic: elliptic umbilics in optical experiments, both taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). In the middle panel, the wavelength is comparable to the length scale of the caustic, thus resulting in a clear wave interference pattern pattern. Right: Cosmological 2D mesh simulation (Zel'dovich approximation) of an elliptic umbilic cluster.</figcaption>
 </figure>
 
 
@@ -592,7 +612,7 @@ $$
 The equilibrium set $\mathcal{M}_{D_5}$ is given by 
 
 $$
-\mathcal{M}_{D_5} = \{ (x, y, t, u, v, w): = -u + 2 w x + 2 x y=0 \qquad -v + x^2 + 2 t y + 4 y^3=0 \}
+\mathcal{M}_{D_5} = \{ (x, y, t, u, v, w): -u + 2 w x + 2 x y=0 \qquad -v + x^2 + 2 t y + 4 y^3=0 \}
 $$
 
 and the singular set $\mathcal{S}_{D_5}$ is
@@ -625,13 +645,16 @@ Here, one nicely observes the different configurations which [Thom (1972)](https
 
 It is, however, difficult to go beyond the shown $(t,u)$ slices and understand the morphogenesis of the bifurcation set, and even more the equilibrium set, in the whole unfolding space.
 
-
 <figure>
-<div style="display: flex; justify-content: center; gap: 100px; max-width: 100%;">
-<img src="./notes/catastrophe_theory/figures/fig-D5_Berry_1.jpg" alt="Description 1" style="height: 200px; margin-right: 25px">
-<img src="./notes/catastrophe_theory/figures/fig-D5_Berry_2.jpg" alt="Description 1" style="height: 200px;  margin-left: 25px">
-</div>
-<figcaption>Two illustrations of parabolic umbilics in an optical experiments, for different points in the unfolding space, thus resulting in the piercing and hyperbolic focus configuration respectively. Taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf)</figcaption>
+  <div style="margin: 5px">
+  <insert_two_images
+  image1="./notes/catastrophe_theory/figures/fig-D5_Berry_1.jpg"
+  image2="./notes/catastrophe_theory/figures/fig-D5_Berry_2.jpg"
+  width="90"
+  margin="2"
+  ></insert_two_images>
+  </div>
+  <figcaption>Two illustrations of parabolic umbilics in an optical experiments, for different points in the unfolding space, thus resulting in the piercing and hyperbolic focus configuration respectively. Taken from [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf)</figcaption>
 </figure>
 
 
