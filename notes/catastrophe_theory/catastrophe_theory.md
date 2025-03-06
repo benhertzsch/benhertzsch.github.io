@@ -2,7 +2,7 @@
 
 <p class="author">Benjamin Hertzsch</p>
 
-__*Disclaimer:*__ These notes were typed up as a first version for a PhD  seminar I gave in Edinburgh on the 27/02/2025. These notes likely contain numerous typos, are wordy or inaccurate in places, and the there are issues with varying screen sizes. I will update the notes and fix the template soon.
+__*Disclaimer:*__ These notes were typed up as a first version for a PhD  seminar I gave in Edinburgh on the 27/02/2025. These notes likely contain numerous typos and are wordy or inaccurate in places. I will update the notes soon.
 
 In these notes, I will derive Thom's *seven elementary catastrophes* ([Thom (1972)](https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&redir_esc=y)), the main elements of catastrophe theory in the four-dimensional universe. Key works on catastrophe theory are [Thom (1972)](https://books.google.co.uk/books/about/Stabilit%C3%A9_structurelle_et_morphog%C3%A9n%C3%A8s.html?id=t7Lbs7x5G9wC&redir_esc=y), [Arnol'd (1972)](https://link.springer.com/article/10.1007/BF01077644) (amongst many of Arnol'd's mathematical works on catastrophe theory) as well as various articles by [Zeeman (1972-1977)](https://books.google.co.uk/books/about/Catastrophe_Theory.html?id=CxuYf2PP2hsC&redir_esc=y). An in-depth and mathematically rigorous survey of catastrophe theory can be found in [Arnold et al. (1985)](https://link.springer.com/book/10.1007/978-0-8176-8340-5). For applications of catastrophe theory, see also [Arnold (1984)](https://link.springer.com/book/10.1007/978-3-642-58124-3); for beautiful illustrations of the various caustics in optics, we refer to [Berry (1980)](https://michaelberryphysics.wordpress.com/wp-content/uploads/2022/02/berry089-1.pdf). In the following, I will closely follow [Saunders (1980)](https://www.cambridge.org/core/books/an-introduction-to-catastrophe-theory/D5ECA839997CD9C2A247C413E69CD2B8) to derive catastrophe theory in the language familiar to physicists.
 
@@ -226,7 +226,7 @@ For clarity, the following figure also shows a rotating view of the equilbrium s
 
 The equilibrium and bifurcation set of the cusp catastrophe reveals a generic geometric property of all the caustics: The equilibrium surface is a smooth surface in the space $(\mathbf{x}, \mathbf{u})$, but the bifurcation set is not a smooth line in the unfolding space $(\mathbf{u})$. More formally, the equilibrium set is always a manifold, whereas the bifurcation set is not. In the case of the cusp, $\mathcal{B}$ is diffeomorphic, but not homeomorphic, to $\mathbb{R}^1$, meaning that $\mathcal{B}$ cannot be smoothly deformed to $\mathbb{R}^1$ without flattening the non-differentiable point at the origin.
 
-As was mentioned above, the equilibrium set typically represent the physical solutions to a boundary problem, with $\mathbf{x}$ being the unobservable Lagrangian space, and $\mathbf{u}$ being the observed Eulerian space. For the cusp, we can see that there are regions of 3 overlapping solutions, which are bounded the by the cusp point and the fold lines emerging from it. These are known as *multi-image regions* in lensing applications, or *multistream regions* is cosmological structure formation and are nicely illustrated in the following physical applications.
+As was mentioned above, the equilibrium set typically represents the physical solutions to a boundary problem, with $\mathbf{x}$ being the unobservable Lagrangian space, and $\mathbf{u}$ being the observed Eulerian space. For the cusp, we can see that there are regions of 3 overlapping solutions, which are bounded the by the cusp point and the fold lines emerging from it. These are known as *multi-image regions* in lensing applications, or *multistream regions* is cosmological structure formation and are nicely illustrated in the following physical applications.
 
 <figure>
   <div style="margin: 10px">
@@ -235,7 +235,7 @@ As was mentioned above, the equilibrium set typically represent the physical sol
   image2="./notes/catastrophe_theory/figures/mirror_plot.jpeg"
   image3="./notes/catastrophe_theory/figures/anim-A3_mesh.gif"
   width="90"
-  margin="3"></insert_three_images>
+  margin="3.5"></insert_three_images>
   </div>
   <figcaption>Physical realisations of cusp catastrophes: left a reflection in a circular mirror (taken from https://i.sstatic.net/TMJnP.jpg), modelled in the middle panel with a circular mirror and a single reflection (dominant contribution to caustic) of the incident rays. The right panel shows a 2D cosmological mesh simulation (Zel'dovich approximation) for the formation of Zel'dovich pancake, bounded by two fold lines connecting two cusp points.</figcaption>
 </figure>
@@ -390,7 +390,7 @@ $$
 j^3(x,y) = (a_1 x + b_1 y)(a_2 x + b_2 y)(a_3 x + b_3 y)
 $$
 
-Our task now is to find suitable diffeomorphisms to bring this 3-jet into (one possible choice of) the distinct forms for the canonical singularities. The proposed factorised form of the 3-jet is particularly nice, as the 3 corank-2 singularities turn out to correspond to three possible cases for roots the jet polynomial, namely (i) real distinct roots, (ii) complex distinct roots and (iii) one pair of repeated real roots. We now go through these cases and discuss their geometries.
+Our task now is to find suitable diffeomorphisms to bring this 3-jet into (one possible choice of) the distinct forms for the canonical singularities. The proposed factorised form of the 3-jet is particularly nice, as the three corank-2 singularities turn out to correspond to three possible cases for the roots of the jet polynomial, namely (i) real distinct roots, (ii) complex distinct roots and (iii) one pair of repeated real roots. We now go through each of these cases and discuss the respective geometries.
 
 
 #### D<sub>4</sub><sup>+</sup> hyperbolic umbilic
