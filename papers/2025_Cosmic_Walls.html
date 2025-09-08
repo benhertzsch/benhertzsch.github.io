@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+<head>
+    <title>Benjamin Hertzsch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link rel="icon" href="figures/icon.png"></link>
+            
+            <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+            <style type='text/css'>
+                ul.nav li.dropdown:hover ul.dropdown-menu {
+                    display: block;
+                }
+            </style>
+
+            <style>
+                :root {
+                    --color1: rgb(229, 240, 251);
+                    --color2: rgb(123, 148, 185);
+                }
+                
+                navbar {
+                    background-color: var(--color1); /* Apply the background color */
+                }
+
+                navbar .nav > .active > a {
+                    background-color: var(--color2);
+                }
+
+                .navbar, .navbar a, .navbar-nav li a {
+                    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                }
+            </style>
+        
+        <link rel="stylesheet" type="text/css" href="css/style_notes.css">
+    </meta>
+
+    <script>
+        window.onload = function() {
+            document.querySelectorAll("insert_two_images").forEach(insertElement => {
+                let images = [
+                    insertElement.getAttribute("image1"),
+                    insertElement.getAttribute("image2")
+                ];
+                let width  = parseFloat(insertElement.getAttribute("width")) || 100; // Default 100% screen width
+                let margin = parseFloat(insertElement.getAttribute("margin")) || 5;   // Default 5% margin
+                let ratios = [];
+                let imsLoaded = 0;
+        
+                images.forEach((src, index) => {
+                    let img = new Image();
+                    img.src = src.trim();
+
+                    img.onload = function() {
+                        let ratio = img.naturalWidth / img.naturalHeight;
+                        ratios[index] = ratio;
+                        imsLoaded++;
+
+                        if (imsLoaded === images.length) {
+                            let baseRatio = ratios[0];
+                            let normRatios = ratios.map(r => r / baseRatio);
+                            let total = normRatios.reduce((sum, r) => sum + r, 0);
+                            let s = (width - 2) - margin;
+                            let unit = s / total;
+
+                            insertTwoImages(images, normRatios, unit, width, margin, insertElement);
+                        }
+                    };
+                });
+            });
+
+            document.querySelectorAll("insert_three_images").forEach(insertElement => {
+                let images = [
+                    insertElement.getAttribute("image1"),
+                    insertElement.getAttribute("image2"),
+                    insertElement.getAttribute("image3")
+                ];
+                let width  = parseFloat(insertElement.getAttribute("width")) || 100; // Default 100% screen width
+                let margin = parseFloat(insertElement.getAttribute("margin")) || 5;   // Default 5% margin
+                let ratios = [];
+                let imsLoaded = 0;
+        
+                images.forEach((src, index) => {
+                    let img = new Image();
+                    img.src = src.trim();
+
+                    img.onload = function() {
+                        let ratio = img.naturalWidth / img.naturalHeight;
+                        ratios[index] = ratio;
+                        imsLoaded++;
+
+                        if (imsLoaded === images.length) {
+                            let baseRatio = ratios[0];
+                            let normRatios = ratios.map(r => r / baseRatio);
+                            let total = normRatios.reduce((sum, r) => sum + r, 0);
+                            let s = (width - 2) - 2 * margin;
+                            let unit = s / total;
+
+                            insertThreeImages(images, normRatios, unit, width, margin, insertElement);
+                        }
+                    };
+                });
+            });
+        };
+        
+        function insertThreeImages(images, normRatios, unit, width, margin, insertElement) {
+            let figure = insertElement.parentElement;
+        
+            images.forEach((src, index) => {
+                let imgElement = document.createElement("img");
+                imgElement.src = src;
+                imgElement.style.width = `${normRatios[index] * unit}%`;
+                
+                // margins for keft and right images
+                if (index === 0) {
+                    imgElement.style.marginLeft = `${(100 - width) / 2}%`;
+                    imgElement.style.marginRight = `${margin}%`;
+                } else if (index === images.length - 1) {
+                    imgElement.style.marginLeft = `${margin}%`;
+                    imgElement.style.marginRight = `${(100 - width) / 2}%`;
+                } else {
+                    imgElement.style.marginLeft = "0";
+                    imgElement.style.marginRight = "0";
+                }
+                figure.insertBefore(imgElement, insertElement);
+            });
+
+            insertElement.remove(); // Remove the custom tag
+        }
+
+        
+        function insertTwoImages(images, normRatios, unit, width, margin, insertElement) {
+            let figure = insertElement.parentElement;
+        
+            images.forEach((src, index) => {
+                let imgElement = document.createElement("img");
+                imgElement.src = src;
+                imgElement.style.width = `${normRatios[index] * unit}%`;
+                
+                // margins for keft and right images
+                if (index === 0) {
+                    imgElement.style.marginLeft = `${(100 - width) / 2}%`;
+                    imgElement.style.marginRight = `${margin}%`;
+                } else {
+                    imgElement.style.marginLeft = "0";
+                    imgElement.style.marginRight = `${(100 - width) / 2}%`;
+                }
+                figure.insertBefore(imgElement, insertElement);
+            });
+
+            insertElement.remove(); // Remove the custom tag
+        }
+        </script>
+   
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default" style="margin-bottom: 0;"> 
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html">About</a></li>
+                    <li><a href="./research.html">Research</a></li>
+                    <li class="active"><a href="./publications.html">Publications</a></li>
+                    <li><a href="./notes.html">Notes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 20px; margin-top: 0px;">
+<h1 id="additional-materials-2025-cosmic-walls-paper">Additional
+Materials – 2025 <em>Cosmic walls</em> paper</h1>
+<p>This webpage contains additional material for the paper</p>
+<p>Benjamin Hertzsch, Job Feldbrugge, Maé Rodriguez, Rien van de
+Weygaert (2025) <em>“A New Recipe for Pancakes — Caustic Skeleton
+Constraint Simulations I: On the Reality of Walls in the Cosmic
+Web</em>”</p>
+<p>We provide the following materials accompanying the text:</p>
+<ul>
+<li><p>High-resolution wall centre constraint simulation: <a
+href="./2025_Cosmic_walls/A3_animation.mp4">fly-through animation
+(mp4-file)</a> and <a
+href="./2025_Cosmic_walls/A3_animation.mp4">rotating animation
+(mp4-file)</a></p></li>
+<li><p>100 Field realisations for the <span
+class="math inline"><em>A</em><sub>3</sub></span> wall centre constraint
+at <span
+class="math inline">(<em>σ</em>, <em>b</em><sub><em>c</em></sub>) = (2.0, 0.8)</span>:
+<a href="./2025_Cosmic_walls/A3_realisations.zip">folder
+(zip)</a></p></li>
+<li><p>100 Field realisations for the <span
+class="math inline"><em>ϕ</em><sup>(+ − −)</sup></span> saddle
+constraint at <span class="math inline"><em>σ</em> = 2.0</span>: <a
+href="./2025_Cosmic_walls/phi_realisations.zip">folder
+(zip)</a></p></li>
+<li><p>100 Field realisations for the <span
+class="math inline"><em>δ</em><sup>(+ + −)</sup></span> saddle
+constraint at <span
+class="math inline">(<em>σ</em>, <em>b</em><sub><em>c</em></sub>) = (2.0, 0.9)</span>:
+<a href="./2025_Cosmic_walls/delta_realisations_2.0.zip">folder
+(zip)</a></p></li>
+<li><p>50 Field realisations for the <span
+class="math inline"><em>δ</em><sup>(+ + −)</sup></span> saddle
+constraint at <span
+class="math inline">(<em>σ</em>, <em>b</em><sub><em>c</em></sub>) = (1.5, 0.8)</span>:
+<a href="./2025_Cosmic_walls/delta_fields_1.5.zip">folder
+(zip)</a></p></li>
+<li><p>50 Field realisations for the <span
+class="math inline"><em>δ</em><sup>(+ + −)</sup></span> saddle
+constraint at <span
+class="math inline">(<em>σ</em>, <em>b</em><sub><em>c</em></sub>) = (1.0, 0.7)</span>:
+<a href="./2025_Cosmic_walls/delta_fields_1.0.zip">folder
+(zip)</a></p></li>
+</ul>
+<p>Please do not hesitate to reach out to the authors if you have
+questions about the paper, or are interested in learning more about this
+project.</p>
+        <!-- content_insertion -->
+    </div>
+
+</body>
+
+</html>
