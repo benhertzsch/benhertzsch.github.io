@@ -594,7 +594,7 @@ $$
 \boxed{D_5: \quad \eta(x,y) = y^4 + x^2 y }
 $$
 
-Note that a further degeneracy in the 3-jet or the requirement of a higher term (e.g. $y^4$) vanishing in the 4-jet would raise the codimension to 4. The $D_5$ singularity is therefore the last in the list of the catastrophes up to codimension 4.
+Note that a further degeneracy in the 3-jet or the requirement of a higher term (e.g. $y^4$) vanishing in the 4-jet would raise the codimension to at least 5. The $D_5$ singularity is therefore the last in the list of the catastrophes up to codimension 4.
 
 The universal unfolding is again found by considering $\partial_x \eta \sim x y$ and $\partial_y \eta \sim x^2 + y^3$, where the former has a place in the diagram. One can draw further shadows from $x^3 = -y^2(xy) + x(x^2 + y^3)$ and $y^4 = y (x^2 + y^3) - x(xy)$.
 
