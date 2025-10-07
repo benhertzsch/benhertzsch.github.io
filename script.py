@@ -46,9 +46,9 @@ def main():
         ['contents/papers.html', './papers.html', "./base.html", './papers.html'],
         ['contents/notes.html', './notes.html', "./base.html", './notes.html'],
         
-        ['notes/catastrophe_theory/catastrophe_theory.html', './catastrophe_theory.html', "./base_minimal.html", './notes.html'],
+        #['notes/catastrophe_theory/catastrophe_theory.html', './catastrophe_theory.html', "./base_minimal.html", './notes.html'],
         
-        ['papers/2025_Cosmic_Walls_/2025_Cosmic_Walls.html', 'papers/2025_Cosmic_Walls.html', "./base_minimal.html", './papers.html']
+        ['papers/2025_Cosmic_Walls_/2025_Cosmic_Walls.html', 'papers/2025_Cosmic_Walls.html', "./base_minimal.html", '../papers.html']
     ]
 
     for (in_file, out_file, base_file, navbar_string) in paths:
