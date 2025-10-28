@@ -4,7 +4,7 @@ Here you can find more information on my research projects, all of which are don
 
 Please check back soon for detailed pages on the projects listed below.
 
-### Caustic Skeleton & Cosmic Web
+### *Caustic Skeleton & Cosmic Web*
 
 <div style="position: relative; min-height: 210px;">
 <div style="text-align: right; display: inline-block; float: right;">
@@ -13,7 +13,7 @@ Please check back soon for detailed pages on the projects listed below.
 Cosmic structure formation weaves the dark and baryonic matter into an intricate multiscale network commonly referred to as the *cosmic web*. In this project, we investigate the geometry and dynamics of the evolving cosmic web through the language of catastrophe theory. The *caustic skeleton* model allows us to study cosmological structure formation on an unprecedented analytical level, with questions ranging from the statistics of the primordial fields to constrained $N$-body simulations for cosmic web environments. Further collaborators to this project are Maé Rodriguez (student in Edinburgh) and [Prof. Dr Rien van de Weygaert](https://www.astro.rug.nl/~weygaert/).
 </div>
 
-### Caustics in quantum-mechanical path integrals
+### *Caustics in quantum-mechanical path integrals*
 
 <div style="position: relative; min-height: 200px;">
 <div style="text-align: right; display: inline-block; float: right;">
@@ -22,7 +22,7 @@ Cosmic structure formation weaves the dark and baryonic matter into an intricate
 The path integral formulation of quantum mechanics provides an elegant approach to problems involving the dynamical evolution of quantum states. In this project, we investigate to what extent quantum mechanical path integrals are characterised by the underlying classical paths and their caustics. A surprising finding of previous studies is that both real and complex classical paths are key to understanding quantum dynamics. This project is done in collaboration with [Prof. Dr Ue-Li Pen](https://www.cita.utoronto.ca/~pen/wordpress/).
 </div>
 
-### Oscillatory integrals and efficient numerics
+### *Oscillatory integrals and efficient numerics*
 
 <div style="position: relative; min-height: 200px;">
 <div style="text-align: right; display: inline-block; float: right;">
