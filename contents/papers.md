@@ -5,8 +5,11 @@
 
 Here, I provide an updated list of my academic research papers:
 
-- Benjamin Hertzsch, Job Feldbrugge, Maé Rodriguez, Rien van de Weygaert: *"A New Recipe for Caustic Pancakes: On the Reality of Walls in the Cosmic Web*", **JCAP (2026)**, vol 2. preprint at [arXiv:2510.02419](https://arxiv.org/abs/2510.02419).<br>
+- Benjamin Hertzsch, Job Feldbrugge, Maé Rodriguez, Rien van de Weygaert: *"A New Recipe for Caustic Pancakes: On the Reality of Walls in the Cosmic Web*", **JCAP (2026)**, vol 2. Preprint at [arXiv:2510.02419](https://arxiv.org/abs/2510.02419).<br>
 Have a look at the [additional materials](./papers/2025_Cosmic_Walls.html) page for animations and supplementary visualisations accompanying the paper!
+
+- Benjamin Hertzsch, Job Feldbrugge, Rien van de Weygaert: *"Galaxy Populations in the IllustrisTNG Caustic Skeleton*" (2026), preprint at [arXiv:2604.18209](https://arxiv.org/abs/2604.18209).
+
 
 
 ### *Talks*
