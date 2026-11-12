@@ -5,11 +5,12 @@
 
 Here, I provide an updated list of my academic research papers:
 
-- Benjamin Hertzsch, Job Feldbrugge, Maé Rodriguez, Rien van de Weygaert: *"A New Recipe for Caustic Pancakes: On the Reality of Walls in the Cosmic Web*", **JCAP (2026)**, vol 2. Preprint at [arXiv:2510.02419](https://arxiv.org/abs/2510.02419).<br>
+1) **Benjamin Hertzsch**, Job Feldbrugge, Maé Rodriguez, Rien van de Weygaert: *"A new recipe for caustic pancakes: on the reality of walls in the cosmic web*", __Journal of Cosmology and Astroparticle Physics (2026)__ , vol 2. Preprint at [arXiv:2510.02419](https://arxiv.org/abs/2510.02419).<br>
 Have a look at the [additional materials](./papers/2025_Cosmic_Walls.html) page for animations and supplementary visualisations accompanying the paper!
 
-- Benjamin Hertzsch, Job Feldbrugge, Rien van de Weygaert: *"Galaxy Populations in the IllustrisTNG Caustic Skeleton*" (2026), preprint at [arXiv:2604.18209](https://arxiv.org/abs/2604.18209).
+2) **Benjamin Hertzsch**, Job Feldbrugge, Rien van de Weygaert: *"Galaxy populations in the IllustrisTNG caustic skeleton*"  **Monthly Notices of the Royal Astronomical Society (2026)**, vol.  552, issue 3. Preprint at [arXiv:2604.18209](https://arxiv.org/abs/2604.18209).
 
+3) Amelie Read, Job Feldbrugge, Celine Boehm, Rien van de Weygaert, **Benjamin Hertzsch**: *"Caustic Skeleton and the Local Cosmic Web: the Coma Cluster node and the Pisces-Perseus ridge*" (2026), preprint at [arXiv:2604.22213](https://arxiv.org/abs/2604.22213).
 
 
 ### *Talks*
@@ -33,5 +34,14 @@ During my PhD, I have presented my research at a few international cosmology con
 <div style="text-align: right; display: inline-block; float: right;">
 <img src="./contents/figures/fig-PhaseSpaceDTFE.jl.png" style="height: 100px; width: auto; margin-left: 20px; padding-top: 5px">
 </div>
-I am a co-developer of the **PhaseSpaceDTFE.jl** julia package for evaluating multistream density and velocity fields from cosmological $N$-body simulations. The code is hosted at [this repository](https://github.com/jfeldbrugge/PhaseSpaceDTFE.jl) and registered with the DOI [10.5281/zenodo.16637560](https://zenodo.org/records/16637561). Have a look at the [documentation](https://jfeldbrugge.github.io/PhaseSpaceDTFE.jl/stable/) if you're interested in using the code in your own research, and do not hesitate to reach out to the developers if you have any questions!
+I am a co-developer of the **PhaseSpaceDTFE.jl** Julia package for evaluating multistream density and velocity fields from cosmological $N$-body simulations. The code is hosted at [this repository](https://github.com/jfeldbrugge/PhaseSpaceDTFE.jl) and registered with the DOI [10.5281/zenodo.16637560](https://zenodo.org/records/16637561). Have a look at the [documentation](https://jfeldbrugge.github.io/PhaseSpaceDTFE.jl/stable/) if you're interested in using the code in your own research, and do not hesitate to reach out to the developers if you have any questions!
+</div>
+
+
+<div style="position: relative; min-height: 200px;">
+<div style="text-align: right; display: inline-block; float: right;">
+<img src="./contents/figures/fig-DiscreteNaturalNeighbors.jl.png" style="height: 100px; width: auto; margin-left: 20px; padding-top: 5px">
+</div>
+I am the lead developer of the **DiscreteNaturalNeighbors.jl**,  a Julia package that implements a discretised version of natural neighbor interpolation (also known as Sibson interpolation) for data on unstructured grids in $n$ dimensions. Following the method of [Park et al. (2006)](https://www.computer.org/csdl/journal/tg/2006/02/v0243/13rRUwInvAT), it replaces Voronoi tessellations with discretised in-cell counts. This makes the method highly efficient, rendering natural neighbor interpolation applicable to problems with a large number of data points, such as millions of particles in cosmological simulations. Have a look at the [documentation](https://benhertzsch.github.io/DiscreteNaturalNeighbors.jl/stable/)!
+
 </div>

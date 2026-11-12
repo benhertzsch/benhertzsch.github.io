@@ -8,6 +8,7 @@ pandoc notes/catastrophe_theory/catastrophe_theory.md -s --mathjax -t html5 -o n
 #pandoc notes/catastrophe_theory/catastrophe_theory.md --css css/style_notes.css -s --mathjax -t html5 -o catastrophe_theory.html
 
 pandoc -o papers/2025_Cosmic_Walls_/2025_Cosmic_Walls.html papers/2025_Cosmic_Walls_/2025_Cosmic_Walls.md
+pandoc -o papers/2026_IllustrisTNG_Caustics_/2026_IllustrisTNG_Caustics.html papers/2026_IllustrisTNG_Caustics_/2026_IllustrisTNG_Caustics.md
 
 
-python script.py
+python3 script.py
