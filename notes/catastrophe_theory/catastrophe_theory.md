@@ -33,7 +33,7 @@ If $\det(\mathcal{H}f(\mathbf{x})) \lvert_{\mathbf{x}_0} = 0$, the critical poin
 For a function $f(x)$ of a single variable and a non-degenerate critical point at the origin, *Morse's classification* states that the critical point is a minimum if $f''(0) > 0$ and a maximum if $f''(0) < 0$. This classification extends to the multivariate case as follows: Consider a multivariate function $f(\mathbf{x})$ with $n$ state variables $\mathbf{x}$ and a non-degenerate critical point at the origin. *Morse's lemma* states that there exists a diffeomorphism $\psi$ which preservers the origin, $\psi(\mathbf{0}) = \mathbf{0}$, under which the function near the non-degenerate critical point may be written in the quadratic form
 
 $$
-f(\psi(\mathbf{x})) = -x_1^2 - x_2^2 - \ldots - x_p^2+1 + x_{p+1}^2 + \ldots + x_{n}^2 \,,
+f(\psi(\mathbf{x})) = -x_1^2 - x_2^2 - \ldots - x_p^2 + x_{p+1}^2 + \ldots + x_{n}^2 \,,
 $$
 
 One calls $p$ the (Morse) index of the singularity at $\mathbf{x}={0}$, which counts the directions in which the function assumes a maximum. Written in this quadratic form, it is obvious that the Hessian $\mathcal{H}{f}$ is invertible at a non-degenerate critical point. 
@@ -141,10 +141,6 @@ $\mathcal{B}$ i readily obtained by eliminating the state variables $\mathbf{x}$
 Before deriving the classification of all caustics, it is instructive to attach a physical meaning to the objects defined above. The various catastrophes generally arise in situations that map from a space of initial configurations, *Lagrangian space*, to a space of final configurations, *Eulerian space*. The essential variables $\mathbf{x}$ here take the role of Lagrangian space coordinates, while the unfolding variables $\mathbf{u}$ correspond to the Eulerian space coordinates. The latter usually chart the (up to) $4$-dimensional space-time a physical experiment lives in.
 
 The singularity germs describe the Lagrangian space configuration, e.g. a lensing or gravitational potential $\Phi(\mathbf{x})$. The critical set $\mathcal{M}$ then corresponds the set of solutions to a governing equation (mapping equation, equation of motion, ...) from this initial configuration, i.e. the set of all possible paths from $\mathbf{x}$ to $\mathbf{u}$. This may be, for instance, the ensemble of light rays bent by a lensing potential, matter moving through a gravitational potential, or generic solutions to an initial value problem. The singular set $\mathcal{S}$ then corresponds to the boundaries of those regions in the Eulerian space $\mathbf{u}$ where several solutions coincide; that is, where several Lagrangian positions $\mathbf{x}$ are mapped to the same final configuration $\mathbf{u}$. The Lagrangian space is usually inaccessible, so that an experiment does not observe $\mathcal{M}$ and $\mathcal{S}$, but only the bifurcation set $\mathcal{B}$, which is the projection of $\mathcal{S}$ into the observed Eulerian space $\mathbf{u}$.
-
-These concepts are is nicely illustrated with snapshot of a 2D mesh simulation for cosmological structure formation; for more details, see [my research page](./research.html). An observer would observe the Eulerian space in the right panel, i.e. the density of particles at the final positions at some time $t$. The observer does not a priori know whence these particles came from, as the Lagrangian space is not observable. The bifurcation set in Eulerian space is characterised by (infinite) density spikes. Our knowledge of the simulation allows us to draw the evolving mesh from Lagrangian space, and correctly identify the bifurcation set as the set of Eulerian points bounding the *multistream* regions where several incoming paths overlap.
-
-
 
 
 
